@@ -47,7 +47,7 @@
   .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  .cover-bar{position:absolute;left:0;right:0;top:86.4%;display:grid;grid-template-columns:1fr 1fr 1.3fr;
+  .cover-bar{position:absolute;left:0;right:0;top:86.4%;display:flex;
     padding-block:1.5%;background:rgba(6,16,40,.45);
     font-size:clamp(7.5px,2.2vw,10.5px);line-height:1.35;color:#fff}
   /* 원본 포스터 선: 보라 → 하늘색 그라데이션 */
@@ -55,7 +55,8 @@
     background:linear-gradient(90deg,#7465ab,#7987bd 38%,#73a0c3 65%,#8cbecc)}
   .cover-bar::before{top:0;opacity:.75}
   .cover-bar::after{bottom:0;left:1%;right:1%}
-  .cover-bar>div{display:flex;align-items:center;justify-content:center;gap:.7em;padding:0 2.5%}
+  /* 칸 너비 = 내용 + 남는 공간을 균등 배분 → 모든 칸의 좌우 여백 동일 */
+  .cover-bar>div{flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:.7em;padding:0}
   .cover-bar>div+div{border-left:1px solid #33435c}
   .cover-bar svg{flex:0 0 auto;width:1.7em;height:1.7em;fill:#76a4d8}
   .cover-bar span{white-space:nowrap}
