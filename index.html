@@ -24,6 +24,7 @@
   .frame{position:relative;margin:14px;padding:56px 22px 48px;background:var(--paper);text-align:center}
   .frame::before{content:"";position:absolute;inset:0;border:1px solid var(--line);pointer-events:none}
   .frame::after{content:"";position:absolute;inset:5px;border:1px solid var(--line);pointer-events:none}
+  .frame.letter{margin:48px 14px 56px;padding:76px 22px 68px}
   .corner{position:absolute;width:64px;height:64px;z-index:1;pointer-events:none}
   .corner.tl{top:-14px;left:-14px}
   .corner.br{bottom:-14px;right:-14px;transform:rotate(180deg)}
@@ -148,7 +149,7 @@
   </header>
 
   <!-- 2. 초청장 (원본 그대로) -->
-  <section class="frame reveal">
+  <section class="frame letter reveal">
     <svg class="corner tl"><use href="#corner"/></svg><svg class="corner br"><use href="#corner"/></svg>
     <h2><svg class="orn r"><use href="#orn"/></svg>초청장<svg class="orn"><use href="#orn"/></svg></h2>
     <p>광운대학교는<br>2027 로보페스트 월드 챔피언십 서울 개최를 앞두고,<br>「AI·로봇 미래교육 비전 선포식 및<br>지역 상생 한마당」을 개최합니다.</p>
