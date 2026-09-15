@@ -47,13 +47,16 @@
   .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  .cover-bar{position:absolute;left:0;right:0;top:87.2%;height:4.6%;display:grid;grid-template-columns:1fr 1fr 1fr;
-    font-size:clamp(8.5px,2.35vw,11px);line-height:1.3;color:#e8ecf5}
-  .cover-bar{font-size:clamp(7.5px,2.15vw,10.5px)}
-  .cover-bar div{display:flex;align-items:center;padding:0 2% 0 40%;white-space:nowrap}
-  .cover-bar div:nth-child(2){padding-left:24%}
-  .cover-bar div:nth-child(3){padding-left:10%;white-space:normal}
-  .cover-logo{position:absolute;left:50%;top:95.9%;width:31%;transform:translate(-50%,-50%);display:block}
+  .cover-bar{position:absolute;left:0;right:0;top:86.4%;display:grid;grid-template-columns:1fr 1fr 1.3fr;
+    padding-block:1.5%;background:rgba(8,18,48,.35);
+    border-top:1px solid rgba(170,195,255,.35);border-bottom:1px solid rgba(190,210,255,.85);
+    box-shadow:0 1px 8px rgba(130,170,255,.45);
+    font-size:clamp(7.5px,2.2vw,10.5px);line-height:1.35;color:#e8ecf5}
+  .cover-bar>div{display:flex;align-items:center;justify-content:center;gap:.7em;padding:0 2.5%}
+  .cover-bar>div+div{border-left:1px solid rgba(170,195,255,.35)}
+  .cover-bar svg{flex:0 0 auto;width:1.45em;height:1.45em;fill:none;stroke:#dfe7ff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .cover-bar span{white-space:nowrap}
+  .cover-logo{position:absolute;left:50%;top:96.1%;width:31%;transform:translate(-50%,-50%);display:block}
 
   /* 달력 · 카운트다운 */
   .cal-head{font-size:15px;font-weight:700;color:var(--sub);margin-bottom:12px}
@@ -141,9 +144,9 @@
       <div class="main2">&amp; 지역 상생 한마당</div>
     </div>
     <div class="cover-bar">
-      <div>2026.10.29 (목)<br>14:00 ~ 18:00</div>
-      <div>광운대학교<br>광운스퀘어 원형 광장</div>
-      <div>노원구 주민단체 및 미래 로봇 관련 학업을 이어갈 청소년</div>
+      <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>2026.10.29 (목)<br>14:00 ~ 18:00</span></div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>광운대학교<br>광운스퀘어 원형 광장</span></div>
+      <div><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg><span>노원구 주민단체 및 미래 로봇<br>관련 학업을 이어갈 청소년</span></div>
     </div>
     <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
   </header>
