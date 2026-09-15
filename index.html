@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>광운 AI·로봇 미래교육 비전 선포식 초대장</title>
+<meta property="og:title" content="광운 AI·로봇 미래교육 비전 선포식 & 지역 상생 한마당">
+<meta property="og:description" content="2026.10.29(목) 14:00~18:00 · 광운대학교 광운스퀘어 원형 광장">
+<meta property="og:image" content="cover.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  /* 초청장 컨셉: 연회색 종이 · 이중 테두리 · 파란 모서리 · 실버 장식 · 광운 적갈색 */
+  :root{
+    --paper:#f3f4f7; --bg:#e6e8ec; --ink:#1a1a1a; --sub:#555a63; --line:#c3c6cc;
+    --blue:#123f94; --silver:#c9ccd3; --kw:#8e1b1f;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    -webkit-font-smoothing:antialiased;word-break:keep-all}
+  .wrap{max-width:480px;margin:0 auto;background:var(--paper);overflow:hidden}
+
+  /* 공통 프레임 (초청장 테두리) */
+  .frame{position:relative;margin:14px;padding:56px 22px 48px;background:var(--paper);text-align:center}
+  .frame::before{content:"";position:absolute;inset:0;border:1px solid var(--line);pointer-events:none}
+  .frame::after{content:"";position:absolute;inset:5px;border:1px solid var(--line);pointer-events:none}
+  .corner{position:absolute;width:64px;height:64px;z-index:1;pointer-events:none}
+  .corner.tl{top:-14px;left:-14px}
+  .corner.br{bottom:-14px;right:-14px;transform:rotate(180deg)}
+
+  h2{display:flex;align-items:center;justify-content:center;gap:14px;font-size:26px;font-weight:800;margin:0 0 30px;letter-spacing:.04em}
+  h2 .orn{width:54px;height:14px;flex:0 0 auto}
+  h2 .orn.r{transform:scaleX(-1)}
+  p{font-size:15px;line-height:1.95;margin:0 0 20px;font-weight:500}
+  .label{display:flex;align-items:center;gap:12px;justify-content:center;color:var(--sub);font-size:14px;margin:30px 0 8px}
+  .label::before,.label::after{content:"";flex:0 0 72px;height:1px;background:var(--line)}
+  .strong{font-size:18px;font-weight:800;margin:0}
+  .sign{margin-top:32px;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--kw)}
+  .sign b{font-size:22px;font-weight:800;line-height:1.1;text-align:left}
+  .sign small{display:block;font-size:10px;font-weight:600;letter-spacing:.02em}
+  .seal{width:40px;height:40px;border-radius:50%;background:var(--kw);display:grid;place-items:center;color:#fff;font-size:10px;font-weight:700}
+
+  /* 표지 (포스터 원본) */
+  .cover{position:relative;aspect-ratio:506/840;background:#0a1330 url(cover.png) center/cover no-repeat;color:#fff}
+  .cover-title{position:absolute;inset:7% 8% auto;text-align:center}
+  .cover-title .rule{height:2px;background:#9fb8e6}
+  .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0}
+  .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em}
+  .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800}
+  .cover-bar{position:absolute;left:0;right:0;top:87.2%;height:4.6%;display:grid;grid-template-columns:1fr 1fr 1fr;
+    font-size:clamp(8.5px,2.35vw,11px);line-height:1.3;color:#e8ecf5}
+  .cover-bar div{display:flex;align-items:center;padding:0 3% 0 15%}
+  .cover-bar div:nth-child(2){padding-left:17%}
+  .cover-bar div:nth-child(3){padding-left:16%}
+  .cover-logo{position:absolute;left:0;right:0;bottom:2.4%;text-align:center;font-weight:800;font-size:clamp(15px,4.6vw,20px)}
+  .cover-logo small{display:block;font-size:.5em;font-weight:500;letter-spacing:.08em;opacity:.85}
+
+  /* 달력 · 카운트다운 */
+  .cal-head{font-size:15px;font-weight:700;color:var(--sub);margin-bottom:12px}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:6px;font-size:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0}
+  .cal-grid .dow{font-size:11px;color:var(--sub);padding-bottom:4px}
+  .cal-grid .sun{color:#b3261e}
+  .cal-grid span{display:grid;place-items:center;height:34px}
+  .cal-grid .day-on{background:var(--blue);color:#fff;border-radius:50%;width:34px;margin:0 auto;font-weight:800}
+  .count{display:flex;justify-content:center;gap:8px;margin-top:26px}
+  .count div{min-width:62px;padding:10px 0;background:#fff;border:1px solid var(--line)}
+  .count b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+  .count small{font-size:10px;color:var(--sub);letter-spacing:.12em}
+  .count-msg{margin:16px 0 0;font-size:14px;color:var(--sub)}
+  .count-msg em{font-style:normal;color:var(--blue);font-weight:800}
+
+  /* 안내 표 */
+  .info{text-align:left;border-top:1px solid var(--ink)}
+  .info div{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:16px 4px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
+  .info dt{font-weight:800;color:var(--blue)}
+  .info dd{margin:0;font-weight:500}
+
+  /* 프로그램 */
+  .program{text-align:left;list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+  .program li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:14px 4px;border-bottom:1px solid var(--line)}
+  .program time{font-weight:800;font-variant-numeric:tabular-nums;color:var(--blue)}
+  .program b{display:block;font-size:15px}
+  .program span{font-size:13px;color:var(--sub)}
+  .note{font-size:12px;color:var(--sub);margin:14px 0 0}
+
+  /* 지도 */
+  .map{border:1px solid var(--line);aspect-ratio:4/3;background:#fff}
+  .map iframe{width:100%;height:100%;border:0;display:block}
+  .addr{margin:18px 0}
+  .addr b{display:block;font-size:17px}
+  .addr span{font-size:14px;color:var(--sub)}
+  .btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .btn{display:flex;align-items:center;justify-content:center;padding:12px 6px;background:#fff;border:1px solid var(--line);
+    color:var(--ink);text-decoration:none;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+  .btn:active{background:#eceef2}
+  .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;font-size:15px;padding:15px}
+  .ways{margin-top:24px;text-align:left;font-size:14px;line-height:1.6;border-top:1px solid var(--line)}
+  .ways div{padding:12px 4px;border-bottom:1px solid var(--line)}
+  .ways b{display:block;font-size:13px;color:var(--blue)}
+
+  /* 회신 폼 */
+  form{display:grid;gap:14px;text-align:left}
+  label.f{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--sub)}
+  input[type=text],input[type=tel],select{width:100%;padding:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:15px;font-family:inherit;border-radius:0}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .seg input{position:absolute;opacity:0}
+  .seg label{padding:12px;text-align:center;border:1px solid var(--line);background:#fff;font-size:14px;cursor:pointer}
+  .seg input:checked+label{border-color:var(--blue);color:var(--blue);font-weight:800;box-shadow:inset 0 0 0 1px var(--blue)}
+  .agree{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--sub)}
+
+  footer{padding:36px 28px 56px;text-align:center}
+  footer .share{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:28px}
+  footer .contact{margin-top:14px;font-size:12px;color:var(--sub);line-height:1.7}
+
+  .toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);opacity:0;padding:12px 20px;background:#222;color:#fff;
+    font-size:14px;transition:.3s;pointer-events:none;z-index:9}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<!-- 재사용 SVG: 파란 모서리, 실버 장식 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="corner" viewBox="0 0 64 64">
+      <path d="M0 0H64L0 64Z" fill="#123f94"/>
+      <path d="M64 0L0 64" stroke="#d9dce2" stroke-width="5"/>
+      <path d="M58 0L0 58" stroke="#fff" stroke-width="1" opacity=".7"/>
+    </symbol>
+    <symbol id="orn" viewBox="0 0 54 14">
+      <path d="M2 7H34" stroke="#c9ccd3" stroke-width="1.4"/>
+      <path d="M34 7c4-6 12-6 14-1s-4 7-7 4 1-6 4-4" fill="none" stroke="#c9ccd3" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="51" cy="7" r="1.6" fill="#c9ccd3"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <!-- 1. 표지 (포스터) -->
+  <header class="cover" role="img" aria-label="광운 AI·로봇 미래교육 비전 선포식 포스터">
+    <div class="cover-title">
+      <div class="rule"></div>
+      <div class="sub">광운 AI·로봇 미래교육</div>
+      <div class="rule"></div>
+      <div class="main">비전 선포식</div>
+      <div class="main2">&amp; 지역 상생 한마당</div>
+    </div>
+    <div class="cover-bar">
+      <div>2026.10.29 (목)<br>14:00 ~ 18:00</div>
+      <div>광운대학교<br>광운스퀘어 원형 광장</div>
+      <div>노원구 주민단체 및 미래 로봇 관련 학업을 이어갈 청소년</div>
+    </div>
+    <div class="cover-logo">광운대학교<small>KwangWoon University</small></div>
+  </header>
+
+  <!-- 2. 초청장 (원본 그대로) -->
+  <section class="frame reveal">
+    <svg class="corner tl"><use href="#corner"/></svg><svg class="corner br"><use href="#corner"/></svg>
+    <h2><svg class="orn r"><use href="#orn"/></svg>초청장<svg class="orn"><use href="#orn"/></svg></h2>
+    <p>광운대학교는<br>2027 로보페스트 월드 챔피언십 서울 개최를 앞두고,<br>「AI·로봇 미래교육 비전 선포식 및<br>지역 상생 한마당」을 개최합니다.</p>
+    <p>미래세대와 지역사회가 함께 AI·로봇 시대의<br>새로운 가능성을 열어가는 뜻깊은 자리에<br>귀하를 정중히 초대하오니,<br>부디 참석하시어 자리를 빛내주시기 바랍니다.</p>
+    <div class="label">일시</div>
+    <p class="strong">2026.10.29(목) 14:00~18:00</p>
+    <div class="sign"><span class="seal">KW</span><b>광운대학교<small>KwangWoon University</small></b></div>
+  </section>
+
+  <!-- 3. 일시 -->
+  <section class="frame reveal">
+    <h2><svg class="orn r"><use href="#orn"/></svg>일시<svg class="orn"><use href="#orn"/></svg></h2>
+    <p class="strong">2026년 10월 29일 목요일</p>
+    <p style="color:var(--sub);margin-bottom:24px">오후 2시 ~ 오후 6시</p>
+    <div class="cal-head">2026. 10</div>
+    <div class="cal-grid" id="cal"></div>
+    <div class="count" id="count">
+      <div><b data-k="d">0</b><small>DAYS</small></div>
+      <div><b data-k="h">0</b><small>HOUR</small></div>
+      <div><b data-k="m">0</b><small>MIN</small></div>
+      <div><b data-k="s">0</b><small>SEC</small></div>
+    </div>
+    <p class="count-msg" id="countMsg"></p>
+  </section>
+
+  <!-- 4. 행사 안내 -->
+  <section class="frame reveal">
+    <h2><svg class="orn r"><use href="#orn"/></svg>행사 안내<svg class="orn"><use href="#orn"/></svg></h2>
+    <dl class="info">
+      <div><dt>일시</dt><dd>2026년 10월 29일(목) 14:00 ~ 18:00</dd></div>
+      <div><dt>장소</dt><dd>광운대학교 광운스퀘어 원형 광장</dd></div>
+      <div><dt>대상</dt><dd>노원구 주민단체 및 미래 로봇 관련 학업을 이어갈 청소년</dd></div>
+      <div><dt>주최</dt><dd>광운대학교</dd></div>
+    </dl>
+  </section>
+
+  <!-- 5. 프로그램 -->
+  <section class="frame reveal">
+    <h2><svg class="orn r"><use href="#orn"/></svg>프로그램<svg class="orn"><use href="#orn"/></svg></h2>
+    <ol class="program">
+      <li><time>14:00</time><div><b>개회 및 내빈 소개</b></div></li>
+      <li><time>14:20</time><div><b>AI·로봇 미래교육 비전 선포</b><span>2027 로보페스트 월드 챔피언십 서울 개최 비전 발표</span></div></li>
+      <li><time>15:00</time><div><b>로봇 시연 및 청소년 성과 발표</b></div></li>
+      <li><time>16:00</time><div><b>지역 상생 한마당</b><span>체험 부스 · 노원구 주민단체 교류</span></div></li>
+      <li><time>17:40</time><div><b>폐회 및 기념 촬영</b></div></li>
+    </ol>
+    <p class="note">※ 세부 프로그램은 사정에 따라 변경될 수 있습니다.</p>
+  </section>
+
+  <!-- 6. 오시는 길 -->
+  <section class="frame reveal">
+    <h2><svg class="orn r"><use href="#orn"/></svg>오시는 길<svg class="orn"><use href="#orn"/></svg></h2>
+    <div class="map">
+      <iframe loading="lazy" title="광운대학교 지도" src="https://maps.google.com/maps?q=%EA%B4%91%EC%9A%B4%EB%8C%80%ED%95%99%EA%B5%90&z=16&output=embed"></iframe>
+    </div>
+    <div class="addr"><b>광운대학교 광운스퀘어 원형 광장</b><span>서울특별시 노원구 광운로 20</span></div>
+    <div class="btns">
+      <a class="btn" target="_blank" rel="noopener" href="https://map.naver.com/p/search/%EA%B4%91%EC%9A%B4%EB%8C%80%ED%95%99%EA%B5%90">네이버지도</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://map.kakao.com/link/search/%EA%B4%91%EC%9A%B4%EB%8C%80%ED%95%99%EA%B5%90">카카오맵</a>
+      <button class="btn" type="button" data-copy="서울특별시 노원구 광운로 20">주소 복사</button>
+    </div>
+    <div class="ways">
+      <div><b>지하철</b>1호선 광운대역 1번 출구 도보 약 10분</div>
+      <div><b>버스</b>광운대학교 정문 하차</div>
+      <div><b>주차</b>교내 주차 공간이 협소하오니 대중교통 이용을 권장드립니다.</div>
+    </div>
+  </section>
+
+  <!-- 7. 참석 회신 -->
+  <section class="frame reveal">
+    <h2><svg class="orn r"><use href="#orn"/></svg>참석 회신<svg class="orn"><use href="#orn"/></svg></h2>
+    <form id="rsvp">
+      <div class="seg">
+        <input type="radio" name="attend" id="a1" value="참석" checked><label for="a1">참석합니다</label>
+        <input type="radio" name="attend" id="a2" value="불참"><label for="a2">참석이 어렵습니다</label>
+      </div>
+      <label class="f">성함<input type="text" name="name" required placeholder="홍길동"></label>
+      <label class="f">소속 / 단체명<input type="text" name="org" placeholder="예) 노원구 ○○주민회"></label>
+      <label class="f">연락처<input type="tel" name="tel" placeholder="010-0000-0000"></label>
+      <label class="f">동반 인원
+        <select name="with"><option>본인만</option><option>1명</option><option>2명</option><option>3명 이상</option></select>
+      </label>
+      <label class="agree"><input type="checkbox" required> 개인정보 수집 및 이용(행사 운영 목적)에 동의합니다.</label>
+      <button class="btn primary" type="submit">회신 보내기</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="share">
+      <button class="btn" type="button" id="shareBtn">초대장 공유하기</button>
+      <button class="btn" type="button" data-copy="__URL__">링크 복사</button>
+    </div>
+    <div class="sign"><span class="seal">KW</span><b>광운대학교<small>KwangWoon University</small></b></div>
+    <div class="contact">문의 : 광운대학교 ○○○팀 02-000-0000</div>
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  (function(){
+    const cal=document.getElementById('cal');
+    let html=['일','월','화','수','목','금','토'].map((d,i)=>`<span class="dow ${i===0?'sun':''}">${d}</span>`).join('');
+    const first=new Date(2026,9,1).getDay();
+    for(let i=0;i<first;i++) html+='<span></span>';
+    for(let d=1;d<=31;d++){
+      const w=(first+d-1)%7;
+      html+= d===29 ? `<span class="day-on">${d}</span>` : `<span class="${w===0?'sun':''}">${d}</span>`;
+    }
+    cal.innerHTML=html;
+  })();
+
+  (function(){
+    const target=new Date('2026-10-29T14:00:00+09:00').getTime();
+    const el=k=>document.querySelector(`#count [data-k="${k}"]`);
+    const msg=document.getElementById('countMsg');
+    function tick(){
+      const diff=Math.max(0,target-Date.now());
+      const d=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, m=Math.floor(diff/6e4)%60, s=Math.floor(diff/1e3)%60;
+      el('d').textContent=d; el('h').textContent=String(h).padStart(2,'0');
+      el('m').textContent=String(m).padStart(2,'0'); el('s').textContent=String(s).padStart(2,'0');
+      msg.innerHTML = diff>0 ? `행사까지 <em>${d+1}일</em> 남았습니다.` : '행사가 진행 중이거나 종료되었습니다.';
+    }
+    tick(); setInterval(tick,1000);
+  })();
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+
+  const toast=t=>{const n=document.getElementById('toast');n.textContent=t;n.classList.add('show');clearTimeout(n._t);n._t=setTimeout(()=>n.classList.remove('show'),2000)};
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{
+    const v=b.dataset.copy==='__URL__'?location.href:b.dataset.copy;
+    try{await navigator.clipboard.writeText(v);toast('복사되었습니다')}catch{toast(v)}
+  }));
+  document.getElementById('shareBtn').addEventListener('click',async()=>{
+    const data={title:'광운 AI·로봇 미래교육 비전 선포식',text:'2026.10.29(목) 14:00 광운대학교 광운스퀘어',url:location.href};
+    if(navigator.share){try{await navigator.share(data)}catch{}}else{try{await navigator.clipboard.writeText(location.href)}catch{};toast('링크가 복사되었습니다')}
+  });
+
+  // 회신 (데모: 실제 수집은 구글폼/시트 연동 필요)
+  document.getElementById('rsvp').addEventListener('submit',e=>{
+    e.preventDefault(); e.target.reset(); toast('회신이 접수되었습니다. 감사합니다.');
+  });
+</script>
+</body>
+</html>
