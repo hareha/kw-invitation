@@ -35,10 +35,7 @@
   .label{display:flex;align-items:center;gap:12px;justify-content:center;color:var(--sub);font-size:14px;margin:30px 0 8px}
   .label::before,.label::after{content:"";flex:0 0 72px;height:1px;background:var(--line)}
   .strong{font-size:18px;font-weight:800;margin:0}
-  .sign{margin-top:32px;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--kw)}
-  .sign b{font-size:22px;font-weight:800;line-height:1.1;text-align:left}
-  .sign small{display:block;font-size:10px;font-weight:600;letter-spacing:.02em}
-  .seal{width:40px;height:40px;border-radius:50%;background:var(--kw);display:grid;place-items:center;color:#fff;font-size:10px;font-weight:700}
+  .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
   /* 표지 (포스터 원본) */
   .cover{position:relative;aspect-ratio:506/840;background:#0a1330 url(cover.png) center/cover no-repeat;color:#fff}
@@ -55,8 +52,7 @@
   .cover-bar div{display:flex;align-items:center;padding:0 2% 0 40%;white-space:nowrap}
   .cover-bar div:nth-child(2){padding-left:24%}
   .cover-bar div:nth-child(3){padding-left:10%;white-space:normal}
-  .cover-logo{position:absolute;left:0;right:0;bottom:2.4%;text-align:center;font-weight:800;font-size:clamp(15px,4.6vw,20px)}
-  .cover-logo small{display:block;font-size:.5em;font-weight:500;letter-spacing:.08em;opacity:.85}
+  .cover-logo{position:absolute;left:50%;bottom:2.2%;width:42%;transform:translateX(-50%);display:block}
 
   /* 달력 · 카운트다운 */
   .cal-head{font-size:15px;font-weight:700;color:var(--sub);margin-bottom:12px}
@@ -149,7 +145,7 @@
       <div>광운대학교<br>광운스퀘어 원형 광장</div>
       <div>노원구 주민단체 및 미래 로봇 관련 학업을 이어갈 청소년</div>
     </div>
-    <div class="cover-logo">광운대학교<small>KwangWoon University</small></div>
+    <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
   </header>
 
   <!-- 2. 초청장 (원본 그대로) -->
@@ -160,7 +156,7 @@
     <p>미래세대와 지역사회가 함께 AI·로봇 시대의<br>새로운 가능성을 열어가는 뜻깊은 자리에<br>귀하를 정중히 초대하오니,<br>부디 참석하시어 자리를 빛내주시기 바랍니다.</p>
     <div class="label">일시</div>
     <p class="strong">2026.10.29(목) 14:00~18:00</p>
-    <div class="sign"><span class="seal">KW</span><b>광운대학교<small>KwangWoon University</small></b></div>
+    <img class="sign" src="kw-logo.png" alt="광운대학교 KwangWoon University">
   </section>
 
   <!-- 3. 일시 -->
@@ -240,7 +236,7 @@
       <button class="btn" type="button" id="shareBtn">초대장 공유하기</button>
       <button class="btn" type="button" data-copy="__URL__">링크 복사</button>
     </div>
-    <div class="sign"><span class="seal">KW</span><b>광운대학교<small>KwangWoon University</small></b></div>
+    <img class="sign" src="kw-logo.png" alt="광운대학교 KwangWoon University">
     <div class="contact">문의 : 광운대학교 ○○○팀 02-000-0000</div>
   </footer>
 </div>
