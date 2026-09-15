@@ -21,13 +21,13 @@
   .wrap{max-width:480px;margin:0 auto;background:var(--paper);overflow:hidden}
 
   /* 공통 프레임 (초청장 테두리) */
-  .frame{position:relative;margin:14px;padding:56px 22px 48px;background:var(--paper);text-align:center}
+  .frame{position:relative;margin:44px 18px;padding:60px 22px 52px;background:var(--paper);text-align:center}
   .frame::before{content:"";position:absolute;inset:0;border:1px solid var(--line);pointer-events:none}
   .frame::after{content:"";position:absolute;inset:5px;border:1px solid var(--line);pointer-events:none}
-  .frame.letter{margin:48px 14px 56px;padding:76px 22px 68px}
-  .corner{position:absolute;width:64px;height:64px;z-index:1;pointer-events:none}
-  .corner.tl{top:-14px;left:-14px}
-  .corner.br{bottom:-14px;right:-14px;transform:rotate(180deg)}
+  .frame.letter{padding-block:72px 64px}
+  .corner{position:absolute;width:56px;height:56px;z-index:1;pointer-events:none}
+  .corner.tl{top:0;left:0}
+  .corner.br{bottom:0;right:0;transform:rotate(180deg)}
 
   h2{display:flex;align-items:center;justify-content:center;gap:14px;font-size:26px;font-weight:800;margin:0 0 30px;letter-spacing:.04em}
   h2 .orn{width:54px;height:14px;flex:0 0 auto}
