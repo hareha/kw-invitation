@@ -84,6 +84,22 @@
   .program span{display:block;font-size:13px;color:var(--sub)}
   .note{font-size:12px;color:var(--sub);margin:18px 0 0}
 
+  /* 현장 갤러리 3×3 */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+  .gallery button{padding:0;border:0;background:#dfe2e7;aspect-ratio:1;cursor:pointer;overflow:hidden}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .gallery button:active img{transform:scale(.97)}
+
+  /* 라이트박스 */
+  .lb{position:fixed;inset:0;z-index:20;background:rgba(10,12,18,.94);display:flex;align-items:center;justify-content:center;touch-action:pan-y}
+  .lb img{max-width:100%;max-height:78vh;object-fit:contain;user-select:none;-webkit-user-drag:none}
+  .lb button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;padding:12px;line-height:0}
+  .lb svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .lb .lb-close{top:max(10px,env(safe-area-inset-top));right:8px}
+  .lb .lb-prev{left:4px;top:50%;transform:translateY(-50%)}
+  .lb .lb-next{right:4px;top:50%;transform:translateY(-50%)}
+  .lb .lb-count{position:absolute;bottom:max(22px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:#c9ccd3;font-size:13px;letter-spacing:.1em}
+
   /* 지도 */
   .map{border:1px solid var(--line);aspect-ratio:4/3;background:#fff}
   .map iframe{width:100%;height:100%;border:0;display:block}
@@ -93,20 +109,8 @@
   .btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
   .btn{display:flex;align-items:center;justify-content:center;padding:12px 6px;background:transparent;border:1px solid var(--line);
     color:var(--ink);text-decoration:none;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
-  .btn:active{background:#eceef2}
-  .btn.primary{background:var(--ink);border-color:var(--ink);color:#fff;font-size:15px;padding:15px}
-  .ways{margin-top:6px;font-size:14px;line-height:1.7}
+  .btn:active{background:#eceef2}  .ways{margin-top:6px;font-size:14px;line-height:1.7}
   .ways .label{margin-top:22px}
-
-  /* 회신 폼 */
-  form{display:grid;gap:14px;text-align:left}
-  label.f{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--sub)}
-  input[type=text],input[type=tel],select{width:100%;padding:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:15px;font-family:inherit;border-radius:0}
-  .seg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-  .seg input{position:absolute;opacity:0}
-  .seg label{padding:12px;text-align:center;border:1px solid var(--line);background:#fff;font-size:14px;cursor:pointer}
-  .seg input:checked+label{border-color:var(--ink);font-weight:800;box-shadow:inset 0 0 0 1px var(--ink)}
-  .agree{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--sub)}
 
   footer{padding:36px 28px 56px;text-align:center}
   footer .share{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:28px}
@@ -200,6 +204,13 @@
     <p class="note">※ 세부 프로그램은 사정에 따라 변경될 수 있습니다.</p>
   </section>
 
+  <!-- 현장 갤러리 -->
+  <section class="frame reveal">
+    <h2><svg class="orn r"><use href="#orn"/></svg>현장 스케치<svg class="orn"><use href="#orn"/></svg></h2>
+    <p style="color:var(--sub);margin-bottom:24px">2026 로보페스트 월드 챔피언십 현장</p>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
   <!-- 6. 오시는 길 -->
   <section class="frame reveal">
     <h2><svg class="orn r"><use href="#orn"/></svg>오시는 길<svg class="orn"><use href="#orn"/></svg></h2>
@@ -219,25 +230,6 @@
     </div>
   </section>
 
-  <!-- 7. 참석 회신 -->
-  <section class="frame reveal">
-    <h2><svg class="orn r"><use href="#orn"/></svg>참석 회신<svg class="orn"><use href="#orn"/></svg></h2>
-    <form id="rsvp">
-      <div class="seg">
-        <input type="radio" name="attend" id="a1" value="참석" checked><label for="a1">참석합니다</label>
-        <input type="radio" name="attend" id="a2" value="불참"><label for="a2">참석이 어렵습니다</label>
-      </div>
-      <label class="f">성함<input type="text" name="name" required placeholder="홍길동"></label>
-      <label class="f">소속 / 단체명<input type="text" name="org" placeholder="예) 노원구 ○○주민회"></label>
-      <label class="f">연락처<input type="tel" name="tel" placeholder="010-0000-0000"></label>
-      <label class="f">동반 인원
-        <select name="with"><option>본인만</option><option>1명</option><option>2명</option><option>3명 이상</option></select>
-      </label>
-      <label class="agree"><input type="checkbox" required> 개인정보 수집 및 이용(행사 운영 목적)에 동의합니다.</label>
-      <button class="btn primary" type="submit">회신 보내기</button>
-    </form>
-  </section>
-
   <footer>
     <div class="share">
       <button class="btn" type="button" id="shareBtn">초대장 공유하기</button>
@@ -247,6 +239,14 @@
 </div>
 
 <div class="toast" id="toast"></div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <img id="lbImg" alt="">
+  <button class="lb-close" type="button" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-prev" type="button" aria-label="이전 사진"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-next" type="button" aria-label="다음 사진"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
 
 <script>
   (function(){
@@ -268,6 +268,25 @@
     msg.innerHTML = diff>0 ? `행사까지 <b>${Math.ceil(diff/864e5)}일</b> 남았습니다.` : '행사가 진행 중이거나 종료되었습니다.';
   })();
 
+  // 현장 갤러리 + 라이트박스
+  (function(){
+    const photos=['DSC04266','DSC04262','DSC04310','DSC04284','DSC04286','DSC04282','DSC04301','DSC04288','DSC04297'];
+    const grid=document.getElementById('gallery'), lb=document.getElementById('lb'), img=document.getElementById('lbImg'), cnt=document.getElementById('lbCount');
+    let cur=0, sx=null;
+    grid.innerHTML=photos.map((p,i)=>`<button type="button" data-i="${i}" aria-label="사진 ${i+1} 크게 보기"><img src="gallery/thumb/${p}.jpg" alt="" loading="lazy"></button>`).join('');
+    const show=i=>{ cur=(i+photos.length)%photos.length; img.src=`gallery/${photos[cur]}.jpg`; cnt.textContent=`${cur+1} / ${photos.length}`; };
+    const open=i=>{ show(i); lb.hidden=false; document.body.style.overflow='hidden'; };
+    const close=()=>{ lb.hidden=true; document.body.style.overflow=''; };
+    grid.addEventListener('click',e=>{ const b=e.target.closest('button'); if(b) open(+b.dataset.i); });
+    lb.querySelector('.lb-close').onclick=close;
+    lb.querySelector('.lb-prev').onclick=()=>show(cur-1);
+    lb.querySelector('.lb-next').onclick=()=>show(cur+1);
+    lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+    lb.addEventListener('touchstart',e=>{ sx=e.touches[0].clientX; },{passive:true});
+    lb.addEventListener('touchend',e=>{ if(sx===null) return; const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) show(cur+(dx<0?1:-1)); sx=null; });
+    document.addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') show(cur-1); if(e.key==='ArrowRight') show(cur+1); });
+  })();
+
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
   document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
 
@@ -279,12 +298,6 @@
   document.getElementById('shareBtn').addEventListener('click',async()=>{
     const data={title:'광운 AI·로봇 미래교육 비전 선포식',text:'2026.10.29(목) 14:00 광운대학교 광운스퀘어',url:location.href};
     if(navigator.share){try{await navigator.share(data)}catch{}}else{try{await navigator.clipboard.writeText(location.href)}catch{};toast('링크가 복사되었습니다')}
-  });
-
-  // 회신 (데모: 실제 수집은 구글폼/시트 연동 필요)
-  document.getElementById('rsvp').addEventListener('submit',e=>{
-    e.preventDefault(); e.target.reset(); toast('회신이 접수되었습니다. 감사합니다.');
-  });
-</script>
+  });</script>
 </body>
 </html>
