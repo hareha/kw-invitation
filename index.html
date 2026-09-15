@@ -43,10 +43,12 @@
   /* 표지 (포스터 원본) */
   .cover{position:relative;aspect-ratio:506/840;background:#0a1330 url(cover.png) center/cover no-repeat;color:#fff}
   .cover-title{position:absolute;inset:7% 8% auto;text-align:center}
-  .cover-title .rule{height:2px;background:#9fb8e6}
-  .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0}
-  .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em}
-  .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800}
+  .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
+    box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
+  .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
+  .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
+    text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
+  .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
   .cover-bar{position:absolute;left:0;right:0;top:87.2%;height:4.6%;display:grid;grid-template-columns:1fr 1fr 1fr;
     font-size:clamp(8.5px,2.35vw,11px);line-height:1.3;color:#e8ecf5}
   .cover-bar div{display:flex;align-items:center;padding:0 3% 0 15%}
@@ -62,26 +64,20 @@
   .cal-grid .sun{color:#b3261e}
   .cal-grid span{display:grid;place-items:center;height:34px}
   .cal-grid .day-on{background:var(--blue);color:#fff;border-radius:50%;width:34px;margin:0 auto;font-weight:800}
-  .count{display:flex;justify-content:center;gap:8px;margin-top:26px}
-  .count div{min-width:62px;padding:10px 0;background:#fff;border:1px solid var(--line)}
-  .count b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
-  .count small{font-size:10px;color:var(--sub);letter-spacing:.12em}
-  .count-msg{margin:16px 0 0;font-size:14px;color:var(--sub)}
-  .count-msg em{font-style:normal;color:var(--blue);font-weight:800}
+  .count-msg{margin:22px 0 0;font-size:15px;font-weight:500}
+  .count-msg b{font-weight:800}
 
-  /* 안내 표 */
-  .info{text-align:left;border-top:1px solid var(--ink)}
-  .info div{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:16px 4px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
-  .info dt{font-weight:800;color:var(--blue)}
-  .info dd{margin:0;font-weight:500}
-
-  /* 프로그램 */
-  .program{text-align:left;list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-  .program li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:14px 4px;border-bottom:1px solid var(--line)}
-  .program time{font-weight:800;font-variant-numeric:tabular-nums;color:var(--blue)}
-  .program b{display:block;font-size:15px}
-  .program span{font-size:13px;color:var(--sub)}
-  .note{font-size:12px;color:var(--sub);margin:14px 0 0}
+  /* 안내 · 프로그램 : 초청장의 '── 일시 ──' 라벨 방식 */
+  .info{margin:0}
+  .info dt{margin:0}
+  .info dt .label{margin-top:24px}
+  .info div:first-child dt .label{margin-top:0}
+  .info dd{margin:0;font-size:16px;font-weight:700;line-height:1.6}
+  .program{list-style:none;margin:0;padding:0}
+  .program li{padding:10px 0;font-size:15px;line-height:1.7}
+  .program time{display:block;font-weight:800;font-variant-numeric:tabular-nums}
+  .program span{display:block;font-size:13px;color:var(--sub)}
+  .note{font-size:12px;color:var(--sub);margin:18px 0 0}
 
   /* 지도 */
   .map{border:1px solid var(--line);aspect-ratio:4/3;background:#fff}
@@ -90,13 +86,12 @@
   .addr b{display:block;font-size:17px}
   .addr span{font-size:14px;color:var(--sub)}
   .btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-  .btn{display:flex;align-items:center;justify-content:center;padding:12px 6px;background:#fff;border:1px solid var(--line);
+  .btn{display:flex;align-items:center;justify-content:center;padding:12px 6px;background:transparent;border:1px solid var(--line);
     color:var(--ink);text-decoration:none;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
   .btn:active{background:#eceef2}
-  .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff;font-size:15px;padding:15px}
-  .ways{margin-top:24px;text-align:left;font-size:14px;line-height:1.6;border-top:1px solid var(--line)}
-  .ways div{padding:12px 4px;border-bottom:1px solid var(--line)}
-  .ways b{display:block;font-size:13px;color:var(--blue)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:#fff;font-size:15px;padding:15px}
+  .ways{margin-top:6px;font-size:14px;line-height:1.7}
+  .ways .label{margin-top:22px}
 
   /* 회신 폼 */
   form{display:grid;gap:14px;text-align:left}
@@ -105,7 +100,7 @@
   .seg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
   .seg input{position:absolute;opacity:0}
   .seg label{padding:12px;text-align:center;border:1px solid var(--line);background:#fff;font-size:14px;cursor:pointer}
-  .seg input:checked+label{border-color:var(--blue);color:var(--blue);font-weight:800;box-shadow:inset 0 0 0 1px var(--blue)}
+  .seg input:checked+label{border-color:var(--ink);font-weight:800;box-shadow:inset 0 0 0 1px var(--ink)}
   .agree{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--sub)}
 
   footer{padding:36px 28px 56px;text-align:center}
@@ -174,12 +169,6 @@
     <p style="color:var(--sub);margin-bottom:24px">오후 2시 ~ 오후 6시</p>
     <div class="cal-head">2026. 10</div>
     <div class="cal-grid" id="cal"></div>
-    <div class="count" id="count">
-      <div><b data-k="d">0</b><small>DAYS</small></div>
-      <div><b data-k="h">0</b><small>HOUR</small></div>
-      <div><b data-k="m">0</b><small>MIN</small></div>
-      <div><b data-k="s">0</b><small>SEC</small></div>
-    </div>
     <p class="count-msg" id="countMsg"></p>
   </section>
 
@@ -187,10 +176,10 @@
   <section class="frame reveal">
     <h2><svg class="orn r"><use href="#orn"/></svg>행사 안내<svg class="orn"><use href="#orn"/></svg></h2>
     <dl class="info">
-      <div><dt>일시</dt><dd>2026년 10월 29일(목) 14:00 ~ 18:00</dd></div>
-      <div><dt>장소</dt><dd>광운대학교 광운스퀘어 원형 광장</dd></div>
-      <div><dt>대상</dt><dd>노원구 주민단체 및 미래 로봇 관련 학업을 이어갈 청소년</dd></div>
-      <div><dt>주최</dt><dd>광운대학교</dd></div>
+      <div><dt><span class="label">일시</span></dt><dd>2026.10.29(목) 14:00~18:00</dd></div>
+      <div><dt><span class="label">장소</span></dt><dd>광운대학교 광운스퀘어 원형 광장</dd></div>
+      <div><dt><span class="label">대상</span></dt><dd>노원구 주민단체 및<br>미래 로봇 관련 학업을 이어갈 청소년</dd></div>
+      <div><dt><span class="label">주최</span></dt><dd>광운대학교</dd></div>
     </dl>
   </section>
 
@@ -198,11 +187,11 @@
   <section class="frame reveal">
     <h2><svg class="orn r"><use href="#orn"/></svg>프로그램<svg class="orn"><use href="#orn"/></svg></h2>
     <ol class="program">
-      <li><time>14:00</time><div><b>개회 및 내빈 소개</b></div></li>
-      <li><time>14:20</time><div><b>AI·로봇 미래교육 비전 선포</b><span>2027 로보페스트 월드 챔피언십 서울 개최 비전 발표</span></div></li>
-      <li><time>15:00</time><div><b>로봇 시연 및 청소년 성과 발표</b></div></li>
-      <li><time>16:00</time><div><b>지역 상생 한마당</b><span>체험 부스 · 노원구 주민단체 교류</span></div></li>
-      <li><time>17:40</time><div><b>폐회 및 기념 촬영</b></div></li>
+      <li><time>14:00</time>개회 및 내빈 소개</li>
+      <li><time>14:20</time>AI·로봇 미래교육 비전 선포<span>2027 로보페스트 월드 챔피언십 서울 개최 비전 발표</span></li>
+      <li><time>15:00</time>로봇 시연 및 청소년 성과 발표</li>
+      <li><time>16:00</time>지역 상생 한마당<span>체험 부스 · 노원구 주민단체 교류</span></li>
+      <li><time>17:40</time>폐회 및 기념 촬영</li>
     </ol>
     <p class="note">※ 세부 프로그램은 사정에 따라 변경될 수 있습니다.</p>
   </section>
@@ -220,9 +209,9 @@
       <button class="btn" type="button" data-copy="서울특별시 노원구 광운로 20">주소 복사</button>
     </div>
     <div class="ways">
-      <div><b>지하철</b>1호선 광운대역 1번 출구 도보 약 10분</div>
-      <div><b>버스</b>광운대학교 정문 하차</div>
-      <div><b>주차</b>교내 주차 공간이 협소하오니 대중교통 이용을 권장드립니다.</div>
+      <div class="label">지하철</div><div>1호선 광운대역 1번 출구 도보 약 10분</div>
+      <div class="label">버스</div><div>광운대학교 정문 하차</div>
+      <div class="label">주차</div><div>교내 주차 공간이 협소하오니<br>대중교통 이용을 권장드립니다.</div>
     </div>
   </section>
 
@@ -272,16 +261,9 @@
 
   (function(){
     const target=new Date('2026-10-29T14:00:00+09:00').getTime();
-    const el=k=>document.querySelector(`#count [data-k="${k}"]`);
     const msg=document.getElementById('countMsg');
-    function tick(){
-      const diff=Math.max(0,target-Date.now());
-      const d=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, m=Math.floor(diff/6e4)%60, s=Math.floor(diff/1e3)%60;
-      el('d').textContent=d; el('h').textContent=String(h).padStart(2,'0');
-      el('m').textContent=String(m).padStart(2,'0'); el('s').textContent=String(s).padStart(2,'0');
-      msg.innerHTML = diff>0 ? `행사까지 <em>${d+1}일</em> 남았습니다.` : '행사가 진행 중이거나 종료되었습니다.';
-    }
-    tick(); setInterval(tick,1000);
+    const diff=target-Date.now();
+    msg.innerHTML = diff>0 ? `행사까지 <b>${Math.ceil(diff/864e5)}일</b> 남았습니다.` : '행사가 진행 중이거나 종료되었습니다.';
   })();
 
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
