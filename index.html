@@ -271,7 +271,7 @@
 
   // 현장 갤러리 + 라이트박스
   (function(){
-    const photos=['DSC04266','DSC04262','DSC04310','DSC04284','DSC04286','DSC04282','DSC04301','DSC04288','DSC04297'];
+    const photos=['DSC04266','DSC04262','DSC04327','DSC04329','DSC04383','DSC04376','DSC04333','DSC04356','DSC04385'];
     const grid=document.getElementById('gallery'), lb=document.getElementById('lb'), img=document.getElementById('lbImg'), cnt=document.getElementById('lbCount');
     let cur=0, sx=null;
     grid.innerHTML=photos.map((p,i)=>`<button type="button" data-i="${i}" aria-label="사진 ${i+1} 크게 보기"><img src="gallery/thumb/${p}.jpg" alt="" loading="lazy"></button>`).join('');
