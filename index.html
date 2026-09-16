@@ -42,13 +42,14 @@
   /* 표지: 포스터 원본을 화면 높이에 꽉 채움(좌우만 약간 크롭, 위아래 빈 여백 없음) */
   .cover{position:relative;height:100svh;min-height:540px;max-height:1000px;color:#fff;
     background:#070e1b url(cover.png?v=3) center bottom/cover no-repeat}
-  .cover-title{position:absolute;inset:11% 8% auto;text-align:center}
+  /* 제목을 무대 바로 위까지 내리고 키워서 가운데 빈 공간을 줄임 */
+  .cover-title{position:absolute;inset:auto 7% 55.5%;text-align:center}
   .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
     box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
-  .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
+  .cover-title .sub{font-size:clamp(18px,5.9vw,27px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
+  .cover-title .main{font-size:clamp(48px,16.5vw,78px);font-weight:900;margin:18px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
-  .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
+  .cover-title .main2{font-size:clamp(24px,8vw,37px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
   .cover-bar{position:absolute;left:0;right:0;top:86.43%;height:5.95%;display:flex;
     /* 원본 포스터에 인쇄된 정보 바 자리를 그대로 덮음 (아래 사진은 손대지 않음) */
     background:linear-gradient(90deg,#08152d,#0a1a33 55%,#0e2c50);
