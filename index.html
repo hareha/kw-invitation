@@ -39,19 +39,16 @@
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
   /* 표지 (포스터 원본) */
-  /* 표지: 포스터 한 장(하늘은 포스터 자신의 하늘을 늘린 것)으로만 구성 — 이어붙인 경계 없음 */
-  .cover{position:relative;height:100svh;min-height:560px;color:#fff;
-    background:#081b35 url(cover-tall.png?v=1) center bottom/cover no-repeat}
-  .cover-title{position:absolute;left:7%;right:7%;bottom:47.5%;text-align:center}
+  .cover{position:relative;aspect-ratio:506/840;background:#0a1330 url(cover.png) center/cover no-repeat;color:#fff}
+  .cover-title{position:absolute;inset:7% 8% auto;text-align:center}
   .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
     box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
-  .cover-title .sub{font-size:clamp(18px,5.9vw,27px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  .cover-title .main{font-size:clamp(48px,16.5vw,78px);font-weight:900;margin:18px 0 4px;letter-spacing:-.02em;
+  .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
+  .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
-  .cover-title .main2{font-size:clamp(24px,8vw,37px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  .cover-bar{position:absolute;left:0;right:0;top:89.6%;height:4.56%;display:flex;
-    /* 원본 포스터에 인쇄된 정보 바 자리를 그대로 덮음 (아래 사진은 손대지 않음) */
-    background:linear-gradient(90deg,#08152d,#0a1a33 55%,#0e2c50);
+  .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
+  .cover-bar{position:absolute;left:0;right:0;top:86.4%;display:flex;
+    padding-block:1.5%;background:rgba(6,16,40,.45);
     font-size:clamp(7.5px,2.2vw,10.5px);line-height:1.35;color:#fff}
   /* 원본 포스터 선: 보라 → 하늘색 그라데이션 */
   .cover-bar::before,.cover-bar::after{content:"";position:absolute;left:0;right:0;height:1px;
@@ -63,7 +60,7 @@
   .cover-bar>div+div{border-left:1px solid #33435c}
   .cover-bar svg{flex:0 0 auto;width:1.7em;height:1.7em;fill:#76a4d8}
   .cover-bar span{white-space:nowrap}
-  .cover-logo{position:absolute;left:50%;top:96.99%;width:31%;transform:translate(-50%,-50%);display:block}
+  .cover-logo{position:absolute;left:50%;top:96.1%;width:31%;transform:translate(-50%,-50%);display:block}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
