@@ -39,7 +39,8 @@
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
   /* 표지 (포스터 원본) */
-  .cover{position:relative;aspect-ratio:506/840;background:#0a1330 url(cover.png) center/cover no-repeat;color:#fff}
+  /* 포스터 한 장 그대로, 화면 높이에 꽉 차게 (세로 기준으로 채우고 좌우만 잘림) */
+  .cover{position:relative;height:100svh;min-height:560px;background:#0a1330 url(cover.png?v=5) center bottom/cover no-repeat;color:#fff}
   .cover-title{position:absolute;inset:7% 8% auto;text-align:center}
   .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
     box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
