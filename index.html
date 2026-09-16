@@ -45,38 +45,33 @@
   .when-v{font-size:clamp(13px,3.75vw,15.5px);font-weight:700;line-height:1.5;white-space:nowrap}
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
-  /* 표지 (포스터 원본) */
-  /* 포스터 한 장 그대로, 화면 높이에 꽉 차게 (세로 기준으로 채우고 좌우만 잘림) */
-  .cover{position:relative;height:100svh;min-height:560px;background:#0a1330 url(cover.png?v=8) center bottom/cover no-repeat;color:#fff}
-  .cover-title{position:absolute;inset:8.43% 8% auto;text-align:center}
+  /* 표지: 사진(위) + 안내 블록(아래). 높이는 첫 로딩 값으로 고정해 주소창 여닫힘에 흔들리지 않음 */
+  .cover{height:var(--covh,100svh);display:flex;flex-direction:column;color:#fff;background:#0a1330}
+  .cover-photo{position:relative;flex:1 1 auto;min-height:0;
+    background:#0a1330 url(cover-photo.png?v=1) center bottom/cover no-repeat}
+  .cover-title{position:absolute;inset:9% 8% auto;text-align:center}
   .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
     box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
   .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
   .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  /* 표지 하단 안내: 날짜·장소 + 라벨 박스 2개 (포스터 톤: 흰색/남색) */
-  .cover-info{position:absolute;left:0;right:0;top:67%;bottom:7%;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding:0 5%;background:rgba(6,16,40,.5);color:#fff;text-align:center}
-  .cover-info::before,.cover-info::after{content:"";position:absolute;left:0;right:0;height:1px;
-    background:linear-gradient(90deg,#7465ab,#7987bd 38%,#73a0c3 65%,#8cbecc)}
-  .cover-info::before{top:0;opacity:.75}
-  .cover-info::after{bottom:0;left:1%;right:1%}
-  .ci-date{margin:0;font-size:clamp(19px,5.3vw,23px);font-weight:700;color:#fff;line-height:1.25}
-  .ci-date b{font-size:clamp(23px,6.6vw,29px);font-weight:900;color:#fff;
-    text-shadow:0 0 12px rgba(190,215,255,.6)}
-  .ci-place{margin:.4em 0 0;font-size:clamp(15px,4.2vw,17px);font-weight:700;color:#fff}
-  .ci-boxes{width:100%;margin-top:1.15em;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;align-items:stretch}
-  .ci-box{position:relative;border:1px solid rgba(255,255,255,.5);border-radius:10px;
-    background:rgba(255,255,255,.1);padding:15px 10px;min-height:72px;
-    display:flex;align-items:center;justify-content:center}
-  .ci-tag{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
-    background:#fff;color:#0b2350;font-size:clamp(11px,3vw,12.5px);font-weight:800;
-    letter-spacing:.02em;padding:.3em .8em;border-radius:99px;white-space:nowrap}
-  .ci-box p{margin:0;font-size:clamp(12.5px,3.5vw,14.5px);font-weight:600;line-height:1.45;color:#fff}
 
-  .cover-logo{position:absolute;left:50%;top:96.5%;width:31%;transform:translate(-50%,-50%);display:block}
+  /* 하단 안내 블록: 사진 아래에 실제 블록으로 붙어 px 여백 사용 */
+  .cover-foot{flex:0 0 auto;background:#141f38;padding:20px 18px 18px;text-align:center;position:relative}
+  .cover-foot::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,#7465ab,#7987bd 38%,#73a0c3 65%,#8cbecc)}
+  .ci-date{margin:0;font-size:clamp(19px,5.3vw,23px);font-weight:700;color:#fff;line-height:1.25}
+  .ci-date b{font-size:clamp(23px,6.6vw,29px);font-weight:900}
+  .ci-place{margin:6px 0 0;font-size:clamp(15px,4.2vw,17px);font-weight:700;color:#dfe7f7}
+  .ci-boxes{margin-top:20px;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;align-items:stretch}
+  .ci-box{position:relative;border-radius:10px;background:#fff;color:#16213a;
+    padding:16px 10px;display:flex;align-items:center;justify-content:center}
+  .ci-tag{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
+    background:#123f94;color:#fff;font-size:clamp(11px,3vw,12.5px);font-weight:800;
+    padding:.3em .8em;border-radius:99px;white-space:nowrap}
+  .ci-box p{margin:0;font-size:clamp(12.5px,3.5vw,14.5px);font-weight:700;line-height:1.45}
+  .cover-logo{display:block;width:150px;max-width:44%;margin:18px auto 0}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -145,23 +140,25 @@
 <div class="wrap">
 
   <!-- 1. 표지 (포스터) -->
-  <header class="cover" role="img" aria-label="광운 AI·로봇 미래교육 비전 선포식 포스터">
-    <div class="cover-title">
-      <div class="rule"></div>
-      <div class="sub">광운 AI·로봇 미래교육</div>
-      <div class="rule"></div>
-      <div class="main">비전 선포식</div>
-      <div class="main2">&amp; 지역 상생 한마당</div>
+  <header class="cover">
+    <div class="cover-photo" role="img" aria-label="광운 AI·로봇 미래교육 비전 선포식 포스터">
+      <div class="cover-title">
+        <div class="rule"></div>
+        <div class="sub">광운 AI·로봇 미래교육</div>
+        <div class="rule"></div>
+        <div class="main">비전 선포식</div>
+        <div class="main2">&amp; 지역 상생 한마당</div>
+      </div>
     </div>
-    <div class="cover-info">
+    <div class="cover-foot">
       <p class="ci-date">2026년 <b>10월 29일</b> (목)</p>
       <p class="ci-place">광운대학교 광운스퀘어 원형 광장</p>
       <div class="ci-boxes">
         <div class="ci-box"><span class="ci-tag">행사 시간</span><p>오후 2시 ~ 오후 6시</p></div>
         <div class="ci-box"><span class="ci-tag">대상</span><p>노원구 주민단체 및<br>미래 로봇 관련 학업을 이어갈 청소년</p></div>
       </div>
+      <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
     </div>
-    <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
   </header>
 
   <!-- 2. 초청장 (원본 그대로) -->
@@ -235,6 +232,15 @@
 </div>
 
 <script>
+  // 표지 높이: 첫 로딩 시점 값으로 고정 (모바일 주소창 여닫힘에 레이아웃이 튀지 않도록)
+  (function(){
+    const set=()=>document.documentElement.style.setProperty('--covh', window.innerHeight+'px');
+    set();
+    let w=window.innerWidth;
+    addEventListener('resize',()=>{ if(window.innerWidth!==w){ w=window.innerWidth; set(); } });
+    addEventListener('orientationchange',()=>setTimeout(set,250));
+  })();
+
   // 현장 갤러리 + 라이트박스
   (function(){
     const photos=['DSC04266','DSC04262','DSC04327','DSC04329','DSC04383','DSC04376','DSC04333','DSC04356','DSC04385'];
