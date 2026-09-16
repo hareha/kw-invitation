@@ -41,8 +41,9 @@
   /* 표지 (포스터 원본) */
   /* 표지: 제목은 위에, 사진은 바로 아래에서 남은 화면을 모두 채움 */
   .cover{height:100svh;min-height:560px;max-height:1000px;display:flex;flex-direction:column;
-    color:#fff;background:#070e1b}
-  .cover-sky{flex:0 0 auto;padding:7% 7% 3%;background:linear-gradient(180deg,#050b16,#0b1426)}
+    color:#fff;background:#081b35}
+  /* 아래 사진 맨 윗줄 색(#081b35)으로 끝나게 해서 경계가 보이지 않도록 함 */
+  .cover-sky{flex:0 0 auto;padding:7% 7% 3%;background:linear-gradient(180deg,#040f1f 0%,#071a33 78%,#081b35 100%)}
   .cover-title{text-align:center}
   .cover-photo{position:relative;flex:1 1 auto;min-height:0;
     background:url(cover-stage.png?v=1) center bottom/cover no-repeat}
