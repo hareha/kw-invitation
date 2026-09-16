@@ -55,24 +55,26 @@
   .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  /* 표지 하단 안내: 레퍼런스처럼 날짜·장소 + 라벨 박스 2개 */
-  .cover-info{position:absolute;left:0;right:0;top:69.5%;bottom:7%;
+  /* 표지 하단 안내: 날짜·장소 + 라벨 박스 2개 (포스터 톤: 흰색/남색) */
+  .cover-info{position:absolute;left:0;right:0;top:67%;bottom:7%;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     padding:0 5%;background:rgba(6,16,40,.5);color:#fff;text-align:center}
   .cover-info::before,.cover-info::after{content:"";position:absolute;left:0;right:0;height:1px;
     background:linear-gradient(90deg,#7465ab,#7987bd 38%,#73a0c3 65%,#8cbecc)}
   .cover-info::before{top:0;opacity:.75}
   .cover-info::after{bottom:0;left:1%;right:1%}
-  .ci-date{margin:0;font-size:clamp(16px,4.6vw,20px);font-weight:700;color:#eaf0ff;line-height:1.25}
-  .ci-date b{font-size:clamp(19px,5.6vw,25px);font-weight:800;color:#9fc8ff}
-  .ci-place{margin:.35em 0 0;font-size:clamp(12.5px,3.5vw,15px);font-weight:700;color:#dce6ff}
-  .ci-boxes{width:100%;margin-top:1.1em;display:grid;grid-template-columns:1fr 1.25fr;gap:8px}
-  .ci-box{position:relative;border:1px solid rgba(159,200,255,.45);border-radius:10px;
-    background:rgba(255,255,255,.07);padding:15px 8px 10px}
+  .ci-date{margin:0;font-size:clamp(19px,5.3vw,23px);font-weight:700;color:#fff;line-height:1.25}
+  .ci-date b{font-size:clamp(23px,6.6vw,29px);font-weight:900;color:#fff;
+    text-shadow:0 0 12px rgba(190,215,255,.6)}
+  .ci-place{margin:.4em 0 0;font-size:clamp(15px,4.2vw,17px);font-weight:700;color:#fff}
+  .ci-boxes{width:100%;margin-top:1.15em;display:grid;grid-template-columns:1fr 1.3fr;gap:10px;align-items:stretch}
+  .ci-box{position:relative;border:1px solid rgba(255,255,255,.5);border-radius:10px;
+    background:rgba(255,255,255,.1);padding:18px 10px 13px;
+    display:flex;align-items:center;justify-content:center}
   .ci-tag{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
-    background:#9fc8ff;color:#0b1b3a;font-size:clamp(9px,2.4vw,10.5px);font-weight:800;
-    letter-spacing:.04em;padding:.25em .7em;border-radius:99px;white-space:nowrap}
-  .ci-box p{margin:0;font-size:clamp(10px,2.85vw,12.5px);font-weight:600;line-height:1.4;color:#eef3ff}
+    background:#fff;color:#0b2350;font-size:clamp(11px,3vw,12.5px);font-weight:800;
+    letter-spacing:.02em;padding:.3em .8em;border-radius:99px;white-space:nowrap}
+  .ci-box p{margin:0;font-size:clamp(12.5px,3.5vw,14.5px);font-weight:600;line-height:1.45;color:#fff}
 
   .cover-logo{position:absolute;left:50%;top:96.5%;width:31%;transform:translate(-50%,-50%);display:block}
 
