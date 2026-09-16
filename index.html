@@ -45,33 +45,30 @@
   .when-v{font-size:clamp(13px,3.75vw,15.5px);font-weight:700;line-height:1.5;white-space:nowrap}
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
-  /* 표지: 사진(위) + 안내 블록(아래). 높이는 첫 로딩 값으로 고정해 주소창 여닫힘에 흔들리지 않음 */
-  .cover{height:var(--covh,100svh);display:flex;flex-direction:column;color:#fff;background:#0a1330}
-  .cover-photo{position:relative;flex:1 1 auto;min-height:0;
-    background:#0a1330 url(cover-photo.png?v=1) center bottom/cover no-repeat}
-  .cover-title{position:absolute;inset:9% 8% auto;text-align:center}
+  /* 표지 (포스터 원본) */
+  /* 포스터 한 장 그대로, 화면 높이에 꽉 차게 (세로 기준으로 채우고 좌우만 잘림) */
+  .cover{position:relative;height:100svh;min-height:560px;background:#0a1330 url(cover.png?v=8) center bottom/cover no-repeat;color:#fff}
+  .cover-title{position:absolute;inset:8.43% 8% auto;text-align:center}
   .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
     box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
   .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
   .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-
-  /* 하단 안내 블록: 사진 아래에 실제 블록으로 붙어 px 여백 사용 */
-  .cover-foot{flex:0 0 auto;background:#141f38;padding:20px 18px 18px;text-align:center;position:relative}
-  .cover-foot::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  .cover-bar{position:absolute;left:0;right:0;top:83.71%;display:flex;
+    padding-block:3.1%;background:rgba(6,16,40,.45);
+    font-size:clamp(7.5px,2.2vw,10.5px);line-height:1.35;color:#fff}
+  /* 원본 포스터 선: 보라 → 하늘색 그라데이션 */
+  .cover-bar::before,.cover-bar::after{content:"";position:absolute;left:0;right:0;height:1px;
     background:linear-gradient(90deg,#7465ab,#7987bd 38%,#73a0c3 65%,#8cbecc)}
-  .ci-date{margin:0;font-size:clamp(19px,5.3vw,23px);font-weight:700;color:#fff;line-height:1.25}
-  .ci-date b{font-size:clamp(23px,6.6vw,29px);font-weight:900}
-  .ci-place{margin:6px 0 0;font-size:clamp(15px,4.2vw,17px);font-weight:700;color:#dfe7f7}
-  .ci-boxes{margin-top:20px;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;align-items:stretch}
-  .ci-box{position:relative;border-radius:10px;background:#fff;color:#16213a;
-    padding:16px 10px;display:flex;align-items:center;justify-content:center}
-  .ci-tag{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
-    background:#123f94;color:#fff;font-size:clamp(11px,3vw,12.5px);font-weight:800;
-    padding:.3em .8em;border-radius:99px;white-space:nowrap}
-  .ci-box p{margin:0;font-size:clamp(12.5px,3.5vw,14.5px);font-weight:700;line-height:1.45}
-  .cover-logo{display:block;width:150px;max-width:44%;margin:18px auto 0}
+  .cover-bar::before{top:0;opacity:.75}
+  .cover-bar::after{bottom:0;left:1%;right:1%}
+  /* 칸 너비 = 내용 + 남는 공간을 균등 배분 → 모든 칸의 좌우 여백 동일 */
+  .cover-bar>div{flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:.7em;padding:0}
+  .cover-bar>div+div{border-left:1px solid #33435c}
+  .cover-bar svg{flex:0 0 auto;width:1.7em;height:1.7em;fill:#76a4d8}
+  .cover-bar span{white-space:nowrap}
+  .cover-logo{position:absolute;left:50%;top:94.66%;width:31%;transform:translate(-50%,-50%);display:block}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -140,25 +137,20 @@
 <div class="wrap">
 
   <!-- 1. 표지 (포스터) -->
-  <header class="cover">
-    <div class="cover-photo" role="img" aria-label="광운 AI·로봇 미래교육 비전 선포식 포스터">
-      <div class="cover-title">
-        <div class="rule"></div>
-        <div class="sub">광운 AI·로봇 미래교육</div>
-        <div class="rule"></div>
-        <div class="main">비전 선포식</div>
-        <div class="main2">&amp; 지역 상생 한마당</div>
-      </div>
+  <header class="cover" role="img" aria-label="광운 AI·로봇 미래교육 비전 선포식 포스터">
+    <div class="cover-title">
+      <div class="rule"></div>
+      <div class="sub">광운 AI·로봇 미래교육</div>
+      <div class="rule"></div>
+      <div class="main">비전 선포식</div>
+      <div class="main2">&amp; 지역 상생 한마당</div>
     </div>
-    <div class="cover-foot">
-      <p class="ci-date">2026년 <b>10월 29일</b> (목)</p>
-      <p class="ci-place">광운대학교 광운스퀘어 원형 광장</p>
-      <div class="ci-boxes">
-        <div class="ci-box"><span class="ci-tag">행사 시간</span><p>오후 2시 ~ 오후 6시</p></div>
-        <div class="ci-box"><span class="ci-tag">대상</span><p>노원구 주민단체 및<br>미래 로봇 관련 학업을 이어갈 청소년</p></div>
-      </div>
-      <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
+    <div class="cover-bar">
+      <div><svg viewBox="0 0 24 24"><path d="M7 11H9V13H7V11M21 5V19C21 20.11 20.110 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H6V1H8V3H16V1H18V3H19C20.11 3 21 3.9 21 5M5 7H19V5H5V7M19 19V9H5V19H19M15 13V11H17V13H15M11 13V11H13V13H11M7 15H9V17H7V15M15 17V15H17V17H15M11 17V15H13V17H11Z"/></svg><span>2026.10.29 (목)<br>14:00 ~ 18:00</span></div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 4C14.2 4 16 5.8 16 8C16 10.1 13.9 13.5 12 15.9C10.1 13.4 8 10.1 8 8C8 5.8 9.8 4 12 4M12 2C8.7 2 6 4.7 6 8C6 12.5 12 19 12 19S18 12.4 18 8C18 4.7 15.3 2 12 2M12 6C10.9 6 10 6.9 10 8S10.9 10 12 10 14 9.1 14 8 13.1 6 12 6M20 19C20 21.2 16.4 23 12 23S4 21.2 4 19C4 17.700 5.2 16.6 7.1 15.8L7.7 16.7C6.7 17.2 6 17.8 6 18.5C6 19.9 8.7 21 12 21S18 19.9 18 18.5C18 17.8 17.3 17.2 16.2 16.7L16.8 15.8C18.8 16.6 20 17.7 20 19Z"/></svg><span>광운대학교<br>광운스퀘어 원형 광장</span></div>
+      <div><svg viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.840,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/></svg><span>노원구 주민단체 및 미래 로봇<br>관련 학업을 이어갈 청소년</span></div>
     </div>
+    <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
   </header>
 
   <!-- 2. 초청장 (원본 그대로) -->
@@ -232,15 +224,6 @@
 </div>
 
 <script>
-  // 표지 높이: 첫 로딩 시점 값으로 고정 (모바일 주소창 여닫힘에 레이아웃이 튀지 않도록)
-  (function(){
-    const set=()=>document.documentElement.style.setProperty('--covh', window.innerHeight+'px');
-    set();
-    let w=window.innerWidth;
-    addEventListener('resize',()=>{ if(window.innerWidth!==w){ w=window.innerWidth; set(); } });
-    addEventListener('orientationchange',()=>setTimeout(set,250));
-  })();
-
   // 현장 갤러리 + 라이트박스
   (function(){
     const photos=['DSC04266','DSC04262','DSC04327','DSC04329','DSC04383','DSC04376','DSC04333','DSC04356','DSC04385'];
