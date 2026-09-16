@@ -39,15 +39,15 @@
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
   /* 표지 (포스터 원본) */
-  .cover{position:relative;aspect-ratio:506/840;background:#0a1330 url(cover.png) center/cover no-repeat;color:#fff}
-  .cover-title{position:absolute;inset:7% 8% auto;text-align:center}
+  .cover{position:relative;aspect-ratio:506/720;background:#0a1330 url(cover.png) center/cover no-repeat;color:#fff}
+  .cover-title{position:absolute;inset:8.2% 8% auto;text-align:center}
   .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
     box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
   .cover-title .sub{font-size:clamp(17px,5.4vw,25px);font-weight:800;padding:12px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
   .cover-title .main{font-size:clamp(44px,15vw,72px);font-weight:900;margin:22px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  .cover-bar{position:absolute;left:0;right:0;top:86.4%;display:flex;
+  .cover-bar{position:absolute;left:0;right:0;top:84.3%;display:flex;
     padding-block:1.5%;background:rgba(6,16,40,.45);
     font-size:clamp(7.5px,2.2vw,10.5px);line-height:1.35;color:#fff}
   /* 원본 포스터 선: 보라 → 하늘색 그라데이션 */
@@ -60,24 +60,9 @@
   .cover-bar>div+div{border-left:1px solid #33435c}
   .cover-bar svg{flex:0 0 auto;width:1.7em;height:1.7em;fill:#76a4d8}
   .cover-bar span{white-space:nowrap}
-  .cover-logo{position:absolute;left:50%;top:96.1%;width:31%;transform:translate(-50%,-50%);display:block}
+  .cover-logo{position:absolute;left:50%;top:95.4%;width:31%;transform:translate(-50%,-50%);display:block}
 
-  /* 달력 · 카운트다운 */
-  .cal-head{font-size:15px;font-weight:700;color:var(--sub);margin-bottom:12px}
-  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:6px;font-size:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0}
-  .cal-grid .dow{font-size:11px;color:var(--sub);padding-bottom:4px}
-  .cal-grid .sun{color:#b3261e}
-  .cal-grid span{display:grid;place-items:center;height:34px}
-  .cal-grid .day-on{background:var(--blue);color:#fff;border-radius:50%;width:34px;margin:0 auto;font-weight:800}
-  .count-msg{margin:22px 0 0;font-size:15px;font-weight:500}
-  .count-msg b{font-weight:800}
-
-  /* 안내 · 프로그램 : 초청장의 '── 일시 ──' 라벨 방식 */
-  .info{margin:0}
-  .info dt{margin:0}
-  .info dt .label{margin-top:24px}
-  .info div:first-child dt .label{margin-top:0}
-  .info dd{margin:0;font-size:16px;font-weight:700;line-height:1.6}
+  /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
   .program li{padding:10px 0;font-size:15px;line-height:1.7}
   .program time{display:block;font-weight:800;font-variant-numeric:tabular-nums}
@@ -168,31 +153,12 @@
     <p>미래세대와 지역사회가 함께 AI·로봇 시대의<br>새로운 가능성을 열어가는 뜻깊은 자리에<br>귀하를 정중히 초대하오니,<br>부디 참석하시어 자리를 빛내주시기 바랍니다.</p>
     <div class="label">일시</div>
     <p class="strong">2026.10.29(목) 14:00~18:00</p>
+    <div class="label">장소</div>
+    <p class="strong">광운대학교 광운스퀘어 원형 광장</p>
     <img class="sign" src="kw-logo.png" alt="광운대학교 KwangWoon University">
   </section>
 
-  <!-- 3. 일시 -->
-  <section class="frame reveal">
-    <h2><svg class="orn r"><use href="#orn"/></svg>일시<svg class="orn"><use href="#orn"/></svg></h2>
-    <p class="strong">2026년 10월 29일 목요일</p>
-    <p style="color:var(--sub);margin-bottom:24px">오후 2시 ~ 오후 6시</p>
-    <div class="cal-head">2026. 10</div>
-    <div class="cal-grid" id="cal"></div>
-    <p class="count-msg" id="countMsg"></p>
-  </section>
-
-  <!-- 4. 행사 안내 -->
-  <section class="frame reveal">
-    <h2><svg class="orn r"><use href="#orn"/></svg>행사 안내<svg class="orn"><use href="#orn"/></svg></h2>
-    <dl class="info">
-      <div><dt><span class="label">일시</span></dt><dd>2026.10.29(목) 14:00~18:00</dd></div>
-      <div><dt><span class="label">장소</span></dt><dd>광운대학교 광운스퀘어 원형 광장</dd></div>
-      <div><dt><span class="label">대상</span></dt><dd>노원구 주민단체 및<br>미래 로봇 관련 학업을 이어갈 청소년</dd></div>
-      <div><dt><span class="label">주최</span></dt><dd>광운대학교</dd></div>
-    </dl>
-  </section>
-
-  <!-- 5. 프로그램 -->
+  <!-- 3. 프로그램 -->
   <section class="frame reveal">
     <h2><svg class="orn r"><use href="#orn"/></svg>프로그램<svg class="orn"><use href="#orn"/></svg></h2>
     <ol class="program">
@@ -250,25 +216,6 @@
 </div>
 
 <script>
-  (function(){
-    const cal=document.getElementById('cal');
-    let html=['일','월','화','수','목','금','토'].map((d,i)=>`<span class="dow ${i===0?'sun':''}">${d}</span>`).join('');
-    const first=new Date(2026,9,1).getDay();
-    for(let i=0;i<first;i++) html+='<span></span>';
-    for(let d=1;d<=31;d++){
-      const w=(first+d-1)%7;
-      html+= d===29 ? `<span class="day-on">${d}</span>` : `<span class="${w===0?'sun':''}">${d}</span>`;
-    }
-    cal.innerHTML=html;
-  })();
-
-  (function(){
-    const target=new Date('2026-10-29T14:00:00+09:00').getTime();
-    const msg=document.getElementById('countMsg');
-    const diff=target-Date.now();
-    msg.innerHTML = diff>0 ? `행사까지 <b>${Math.ceil(diff/864e5)}일</b> 남았습니다.` : '행사가 진행 중이거나 종료되었습니다.';
-  })();
-
   // 현장 갤러리 + 라이트박스
   (function(){
     const photos=['DSC04266','DSC04262','DSC04327','DSC04329','DSC04383','DSC04376','DSC04333','DSC04356','DSC04385'];
