@@ -37,12 +37,12 @@
   .label::before,.label::after{content:"";flex:0 0 72px;height:1px;background:var(--line)}
   .strong{font-size:18px;font-weight:800;margin:0}
   /* 초청장 일시·장소: 심플한 네모 박스 + 남색 포인트 */
-  .when{margin-top:34px;border:1px solid var(--blue);background:rgba(18,63,148,.04);
-    padding:18px 16px;display:grid;gap:12px}
-  .when-row{display:grid;grid-template-columns:50px 1fr;gap:14px;align-items:center;text-align:left}
+  .when{margin:34px auto 0;max-width:272px;border:1px solid var(--blue);background:rgba(18,63,148,.04);
+    padding:16px 14px;display:grid;gap:12px}
+  .when-row{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center;text-align:left}
   .when-k{background:var(--blue);color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;
     padding:5px 0;text-align:center}
-  .when-v{font-size:clamp(13px,3.75vw,15.5px);font-weight:700;line-height:1.5;white-space:nowrap}
+  .when-v{font-size:clamp(12.5px,3.5vw,14.5px);font-weight:700;line-height:1.5;white-space:nowrap}
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
   /* 표지 (포스터 원본) */
