@@ -55,23 +55,27 @@
   .cover-title .main{font-size:clamp(35px,12vw,58px);font-weight:900;margin:18px 0 4px;letter-spacing:-.02em;
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  /* 제목 아래 일시·장소 칸 */
-  .cover-when{margin-top:28px;display:inline-block;padding:9px 16px;
-    border:1px solid rgba(190,215,255,.65);background:rgba(6,16,40,.4)}
-  .cover-when p{margin:0;font-size:clamp(12px,3.4vw,15px);font-weight:700;line-height:1.55;color:#fff}
+  /* 제목 아래 일시·장소 칸 (아이콘 + 왼쪽 정렬) */
+  .cover-when{margin-top:24px;display:inline-block;text-align:left;padding:12px 18px;
+    background:rgba(8,16,38,.66);border-top:1px solid rgba(190,215,255,.75);border-bottom:1px solid rgba(190,215,255,.75)}
+  .cover-when p{margin:0;display:flex;align-items:center;gap:10px;line-height:1.75;
+    font-size:clamp(12.5px,3.6vw,16px);font-weight:600;color:#fff}
+  .cover-when p+p{margin-top:2px}
+  .cover-when svg{flex:0 0 auto;width:1.3em;height:1.3em;fill:#dde7ff}
+  .cover-when b{font-size:1.18em;font-weight:800}
+  .cover-when em{font-style:normal;font-weight:600;color:#e4ebff;margin-left:.35em}
 
-  /* 하단: 광운대 로고 + 후원사 CI */
-  /* 하단: 어두운 배경 위에 흰색 CI (원본 블러 자국까지 덮도록 그라데이션을 길게) */
-  .cover-spon{position:absolute;left:0;right:0;bottom:0;padding:32px 16px 12px;text-align:center;
-    /* 블러 자국 위에서 이미 불투명해지도록 그라데이션을 앞당김 */
-    background:linear-gradient(180deg,rgba(6,14,34,0),rgba(6,14,34,.9) 11%,rgba(6,14,34,.97) 22%,rgba(6,14,34,.97))}
-  .cover-spon .cover-logo{display:block;width:29%;max-width:126px;margin:0 auto 20px}
-  .spon-k{margin:0 0 8px;font-size:clamp(9.5px,2.7vw,11px);font-weight:700;letter-spacing:.2em;color:#cdd8ef}
-  .spon-box{display:grid;gap:14px;max-width:100%;overflow:hidden}
-  .spon-row{display:flex;align-items:center;justify-content:center;gap:clamp(9px,4vw,18px);flex-wrap:nowrap}
-  /* 화면 폭에 따라 같이 줄어들게 (좁은 기기에서 잘리지 않도록) */
-  .spon-row img{height:clamp(12px,4vw,18px);width:auto;max-width:100%;display:block;opacity:.96;flex:0 1 auto;object-fit:contain}
-  .spon-row img.sq{height:clamp(19px,6.2vw,27px)}
+  /* 하단: 광운대 로고 + 흰 패널 위 후원사 CI */
+  .cover-spon{position:absolute;left:0;right:0;bottom:0;padding:26px 10px 10px;text-align:center;
+    background:linear-gradient(180deg,rgba(6,14,34,0),rgba(6,14,34,.45) 35%,rgba(6,14,34,.6))}
+  .cover-spon .cover-logo{display:block;width:29%;max-width:126px;margin:0 auto 12px}
+  .spon-panel{display:flex;align-items:center;gap:clamp(8px,3vw,16px);
+    background:rgba(255,255,255,.94);border-radius:12px;padding:10px clamp(8px,3vw,14px)}
+  .spon-k{flex:0 0 auto;color:#1b2b4a;font-size:clamp(10px,2.9vw,12px);font-weight:800;letter-spacing:.08em}
+  .spon-box{flex:1 1 auto;min-width:0;display:grid;gap:9px}
+  .spon-row{display:flex;align-items:center;justify-content:space-around;gap:clamp(6px,2.5vw,12px)}
+  .spon-row img{height:clamp(11px,3.4vw,16px);width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
+  .spon-row img.sq{height:clamp(17px,5.2vw,24px)}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -147,24 +151,26 @@
       <div class="rule"></div>
       <div class="main">비전 선포식</div>
       <div class="cover-when">
-        <p>2026.10.29 (목) 14:00 ~ 18:00</p>
-        <p>광운대학교 광운스퀘어</p>
+        <p><svg viewBox="0 0 24 24"><path d="M7 11H9V13H7V11M21 5V19C21 20.11 20.11 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H6V1H8V3H16V1H18V3H19C20.11 3 21 3.9 21 5M5 7H19V5H5V7M19 19V9H5V19H19M15 13V11H17V13H15M11 13V11H13V13H11M7 15H9V17H7V15M15 17V15H17V17H15M11 17V15H13V17H11Z"/></svg><span>2026.<b>10.29</b>(목) <em>14:00~18:00</em></span></p>
+        <p><svg viewBox="0 0 24 24"><path d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9A2.5 2.5 0 0 1 12 11.5M12 2A7 7 0 0 0 5 9C5 14.25 12 22 12 22S19 14.25 19 9A7 7 0 0 0 12 2Z"/></svg><span>광운대학교 광운스퀘어</span></p>
       </div>
     </div>
     <div class="cover-spon">
       <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
-      <p class="spon-k">후원사</p>
-      <div class="spon-box">
-        <div class="spon-row">
-          <img src="sponsors/white/s1-dapa.png?v=2" alt="방위사업청">
-          <img src="sponsors/white/s2-sen.png?v=3" alt="서울특별시교육청">
-          <img class="sq" src="sponsors/white/s3-nowon.png?v=2" alt="노원구청">
-          <img src="sponsors/white/s4-sto.png?v=2" alt="서울관광재단">
-        </div>
-        <div class="spon-row">
-          <img src="sponsors/white/s5-kiria.png?v=2" alt="한국로봇산업진흥원">
-          <img src="sponsors/white/s6-kdia.png?v=2" alt="한국방위산업진흥회">
-          <img src="sponsors/white/s7-kar.png?v=2" alt="한국AI·로봇산업협회">
+      <div class="spon-panel">
+        <span class="spon-k">후원사</span>
+        <div class="spon-box">
+          <div class="spon-row">
+            <img src="sponsors/s1-dapa.png?v=4" alt="방위사업청">
+            <img src="sponsors/s2-sen.png?v=4" alt="서울특별시교육청">
+            <img class="sq" src="sponsors/s3-nowon.png?v=4" alt="노원구청">
+            <img src="sponsors/s4-sto.png?v=4" alt="서울관광재단">
+          </div>
+          <div class="spon-row">
+            <img src="sponsors/s5-kiria.png?v=4" alt="한국로봇산업진흥원">
+            <img src="sponsors/s6-kdia.png?v=4" alt="한국방위산업진흥회">
+            <img src="sponsors/s7-kar.png?v=4" alt="한국AI·로봇산업협회">
+          </div>
         </div>
       </div>
     </div>
