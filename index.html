@@ -56,19 +56,20 @@
     text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
   .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
   /* 제목 아래 일시·장소 칸 */
-  .cover-when{margin-top:18px;display:inline-block;padding:9px 16px;
+  .cover-when{margin-top:28px;display:inline-block;padding:9px 16px;
     border:1px solid rgba(190,215,255,.65);background:rgba(6,16,40,.4)}
   .cover-when p{margin:0;font-size:clamp(12px,3.4vw,15px);font-weight:700;line-height:1.55;color:#fff}
 
   /* 하단: 광운대 로고 + 후원사 CI */
-  .cover-spon{position:absolute;left:0;right:0;bottom:0;padding:14px 14px 14px;text-align:center;
-    background:linear-gradient(180deg,rgba(6,16,40,0),rgba(6,16,40,.75) 22%,rgba(6,16,40,.9))}
-  .cover-spon .cover-logo{display:block;width:30%;max-width:130px;margin:0 auto 9px}
-  .spon-k{margin:0 0 7px;font-size:clamp(9.5px,2.7vw,11px);font-weight:700;letter-spacing:.2em;color:#cdd8ef}
-  .spon-box{background:rgba(255,255,255,.96);border-radius:8px;padding:9px 10px;display:grid;gap:8px}
-  .spon-row{display:flex;align-items:center;justify-content:center;gap:12px}
-  .spon-row img{height:17px;width:auto;display:block}
-  .spon-row img.sq{height:26px}
+  /* 하단: 어두운 배경 위에 흰색 CI (원본 블러 자국까지 덮도록 그라데이션을 길게) */
+  .cover-spon{position:absolute;left:0;right:0;bottom:0;padding:18px 16px 20px;text-align:center;
+    background:linear-gradient(180deg,rgba(6,14,34,0),rgba(6,14,34,.72) 26%,rgba(6,14,34,.93) 55%,rgba(6,14,34,.96))}
+  .cover-spon .cover-logo{display:block;width:29%;max-width:126px;margin:0 auto 14px}
+  .spon-k{margin:0 0 12px;font-size:clamp(9.5px,2.7vw,11px);font-weight:700;letter-spacing:.2em;color:#cdd8ef}
+  .spon-box{display:grid;gap:14px}
+  .spon-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:nowrap}
+  .spon-row img{height:17px;width:auto;display:block;opacity:.96}
+  .spon-row img.sq{height:27px}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -153,15 +154,15 @@
       <p class="spon-k">후원사</p>
       <div class="spon-box">
         <div class="spon-row">
-          <img src="sponsors/s1-dapa.png" alt="방위사업청">
-          <img src="sponsors/s2-sen.png" alt="서울특별시교육청">
-          <img class="sq" src="sponsors/s3-nowon.png" alt="노원구청">
-          <img src="sponsors/s4-sto.png" alt="서울관광재단">
+          <img src="sponsors/white/s1-dapa.png" alt="방위사업청">
+          <img src="sponsors/white/s2-sen.png" alt="서울특별시교육청">
+          <img class="sq" src="sponsors/white/s3-nowon.png" alt="노원구청">
+          <img src="sponsors/white/s4-sto.png" alt="서울관광재단">
         </div>
         <div class="spon-row">
-          <img src="sponsors/s5-kiria.png" alt="한국로봇산업진흥원">
-          <img src="sponsors/s6-kdia.png" alt="한국방위산업진흥회">
-          <img src="sponsors/s7-kar.png" alt="한국AI·로봇산업협회">
+          <img src="sponsors/white/s5-kiria.png" alt="한국로봇산업진흥원">
+          <img src="sponsors/white/s6-kdia.png" alt="한국방위산업진흥회">
+          <img src="sponsors/white/s7-kar.png" alt="한국AI·로봇산업협회">
         </div>
       </div>
     </div>
