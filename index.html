@@ -66,7 +66,10 @@
   .cover-when em{font-style:normal;font-weight:600;color:#e4ebff;margin-left:.35em}
 
   /* 하단: 흰 패널 윗변 = 원본 블러 시작점(82.7%)에 정확히 맞춤 */
-  .cover-spon{position:absolute;left:6.5%;right:6.5%;top:87.4%;bottom:2.4%;display:flex}
+  /* 하단 자연스러운 dim (로고 가독성) */
+  .cover::after{content:"";position:absolute;left:0;right:0;top:58%;bottom:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(4,10,26,0) 0%,rgba(4,10,26,.18) 45%,rgba(4,10,26,.5) 78%,rgba(4,10,26,.62) 100%)}
+  .cover-spon{position:absolute;left:6.5%;right:6.5%;top:87.4%;bottom:2.4%;display:flex;z-index:1}
   .cover-spon .cover-logo{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);
     width:25%;max-width:106px;margin:0 0 16px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.65))}
   .spon-panel{flex:1 1 auto;display:flex;align-items:center;gap:clamp(10px,3.4vw,18px);
