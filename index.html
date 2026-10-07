@@ -66,16 +66,19 @@
   .cover-when em{font-style:normal;font-weight:600;color:#e4ebff;margin-left:.35em}
 
   /* 하단: 흰 패널 윗변 = 원본 블러 시작점(82.7%)에 정확히 맞춤 */
-  .cover-spon{position:absolute;left:6.5%;right:6.5%;top:82.7%;bottom:2.4%;display:flex}
+  .cover-spon{position:absolute;left:6.5%;right:6.5%;top:87.4%;bottom:2.4%;display:flex}
+  /* 패널 위쪽에 남는 원본 자국은 얇은 어두운 베일로 가림 */
+  .cover::after{content:"";position:absolute;left:0;right:0;top:79%;height:9%;pointer-events:none;
+    background:linear-gradient(180deg,rgba(6,14,34,0),rgba(6,14,34,.72) 45%,rgba(6,14,34,.9))}
   .cover-spon .cover-logo{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);
-    width:26%;max-width:112px;margin:0 0 12px}
+    width:25%;max-width:106px;margin:0 0 14px}
   .spon-panel{flex:1 1 auto;display:flex;align-items:center;gap:clamp(10px,3.4vw,18px);
-    background:rgba(255,255,255,.96);border-radius:14px;padding:10px clamp(10px,3.4vw,16px)}
+    background:rgba(255,255,255,.96);border-radius:14px;padding:7px clamp(10px,3.4vw,16px)}
   .spon-k{flex:0 0 auto;color:#16233d;font-size:clamp(11px,3.3vw,14px);font-weight:800;letter-spacing:.06em}
-  .spon-box{flex:1 1 auto;min-width:0;display:grid;gap:clamp(8px,2.6vw,12px)}
+  .spon-box{flex:1 1 auto;min-width:0;display:grid;gap:clamp(6px,2vw,9px)}
   .spon-row{display:flex;align-items:center;justify-content:space-around;gap:clamp(7px,2.6vw,13px)}
-  .spon-row img{height:clamp(13px,4.2vw,20px);width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
-  .spon-row img.sq{height:clamp(21px,6.6vw,30px)}
+  .spon-row img{height:clamp(12px,3.8vw,18px);width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
+  .spon-row img.sq{height:clamp(19px,5.9vw,27px)}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
