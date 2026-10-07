@@ -66,10 +66,11 @@
     background:linear-gradient(180deg,rgba(6,14,34,0),rgba(6,14,34,.72) 26%,rgba(6,14,34,.93) 55%,rgba(6,14,34,.96))}
   .cover-spon .cover-logo{display:block;width:29%;max-width:126px;margin:0 auto 14px}
   .spon-k{margin:0 0 12px;font-size:clamp(9.5px,2.7vw,11px);font-weight:700;letter-spacing:.2em;color:#cdd8ef}
-  .spon-box{display:grid;gap:14px}
-  .spon-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:nowrap}
-  .spon-row img{height:17px;width:auto;display:block;opacity:.96}
-  .spon-row img.sq{height:27px}
+  .spon-box{display:grid;gap:14px;max-width:100%;overflow:hidden}
+  .spon-row{display:flex;align-items:center;justify-content:center;gap:clamp(9px,4vw,18px);flex-wrap:nowrap}
+  /* 화면 폭에 따라 같이 줄어들게 (좁은 기기에서 잘리지 않도록) */
+  .spon-row img{height:clamp(12px,4vw,18px);width:auto;max-width:100%;display:block;opacity:.96;flex:0 1 auto;object-fit:contain}
+  .spon-row img.sq{height:clamp(19px,6.2vw,27px)}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
