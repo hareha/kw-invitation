@@ -45,40 +45,30 @@
   .when-v{font-size:clamp(12.5px,3.5vw,14.5px);font-weight:700;line-height:1.5;white-space:nowrap}
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
-  /* 표지 (포스터 원본) */
-  /* 포스터 한 장 그대로, 화면 높이에 꽉 차게 (세로 기준으로 채우고 좌우만 잘림) */
-  .cover{position:relative;height:100svh;min-height:560px;background:#0a1330 url(cover.png?v=20) center bottom/cover no-repeat;color:#fff}
-  .cover-title{position:absolute;inset:8.43% 8% auto;text-align:center}
-  .cover-title .rule{height:2px;background:linear-gradient(90deg,rgba(170,200,255,.15),#d6e4ff 50%,rgba(170,200,255,.15));
-    box-shadow:0 0 8px rgba(150,190,255,.9),0 0 18px rgba(120,170,255,.6)}
-  .cover-title .sub{font-size:clamp(13.5px,4.3vw,20px);font-weight:800;padding:10px 0;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  .cover-title .main{font-size:clamp(35px,12vw,58px);font-weight:900;margin:18px 0 4px;letter-spacing:-.02em;
-    text-shadow:0 0 12px rgba(190,215,255,.75),0 0 28px rgba(120,170,255,.45)}
-  .cover-title .main2{font-size:clamp(22px,7.4vw,34px);font-weight:800;text-shadow:0 0 10px rgba(170,200,255,.6)}
-  /* 제목 아래 일시·장소 칸 (아이콘 + 왼쪽 정렬) */
-  .cover-when{margin-top:24px;display:inline-block;text-align:left;padding:12px 18px;
-    background:rgba(8,16,38,.66);border-top:1px solid rgba(190,215,255,.75);border-bottom:1px solid rgba(190,215,255,.75)}
-  .cover-when p{margin:0;display:flex;align-items:center;gap:10px;line-height:1.75;
-    font-size:clamp(12.5px,3.6vw,16px);font-weight:600;color:#fff}
-  .cover-when p+p{margin-top:2px}
-  .cover-when svg{flex:0 0 auto;width:1.3em;height:1.3em;fill:#dde7ff}
-  .cover-when b{font-size:1.18em;font-weight:800}
-  .cover-when em{font-style:normal;font-weight:600;color:#e4ebff;margin-left:.35em}
-
-  /* 하단: 흰 패널 윗변 = 원본 블러 시작점(82.7%)에 정확히 맞춤 */
-  /* 하단 자연스러운 dim (로고 가독성) */
-  .cover::after{content:"";position:absolute;left:0;right:0;top:58%;bottom:0;pointer-events:none;
-    background:linear-gradient(180deg,rgba(4,10,26,0) 0%,rgba(4,10,26,.18) 45%,rgba(4,10,26,.5) 78%,rgba(4,10,26,.62) 100%)}
-  .cover-spon{position:absolute;left:6.5%;right:6.5%;top:87.4%;bottom:2.4%;display:flex;z-index:1}
-  .cover-spon .cover-logo{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);
-    width:25%;max-width:106px;margin:0 0 16px;filter:drop-shadow(0 2px 10px rgba(0,0,0,.65))}
-  .spon-panel{flex:1 1 auto;display:flex;align-items:center;gap:clamp(10px,3.4vw,18px);
-    background:rgba(255,255,255,.96);border-radius:14px;padding:7px clamp(10px,3.4vw,16px)}
-  .spon-k{flex:0 0 auto;color:#16233d;font-size:clamp(11px,3.3vw,14px);font-weight:800;letter-spacing:.06em}
-  .spon-box{flex:1 1 auto;min-width:0;display:grid;gap:clamp(6px,2vw,9px)}
-  .spon-row{display:flex;align-items:center;justify-content:space-around;gap:clamp(7px,2.6vw,13px)}
-  .spon-row img{height:clamp(12px,3.8vw,18px);width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
-  .spon-row img.sq{height:clamp(19px,5.9vw,27px)}
+  /* 표지: 포스터 구성을 비율(%)로 배치 — 화면 크기와 무관하게 위치 고정 */
+  .cover{position:relative;width:100%;overflow:hidden;background:#eef4fb;container-type:inline-size}
+  .kv{position:relative;width:100%;aspect-ratio:1024/1536;
+    background:#dce9f7 url(kv/bg-campus.jpg) center/cover no-repeat}
+  /* 좌하단 대각 띠 */
+  .kv-stripe{position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(118deg,rgba(26,86,194,.85) 0 7%,rgba(255,255,255,0) 7.2%)}
+  .kv-stripe2{position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(118deg,rgba(255,255,255,.75) 0 14%,rgba(255,255,255,0) 14.2%)}
+  .kv-brand{position:absolute;left:6%;top:3.2%;font-size:3.1cqw;letter-spacing:.42em;
+    font-weight:600;color:#17357f}
+  .kv-kw{position:absolute;right:5%;top:2.6%;width:26%}
+  .kv-title{position:absolute;right:5.5%;top:8.5%;width:46%}
+  .kv-r{position:absolute;bottom:17%;height:auto}
+  .kv-ra{left:1%;width:33%}
+  .kv-rb{left:33%;width:19%}
+  .kv-rc{left:50%;width:19%}
+  .kv-rd{right:1%;width:27%;bottom:17.5%}
+  .kv-foot{position:absolute;left:8%;right:8%;bottom:4.5%;text-align:center;color:#12317a}
+  .kv-rule{display:block;height:2px;margin:0 auto 3.2%;width:72%;
+    background:linear-gradient(90deg,rgba(26,86,194,0),#1a56c2 25%,#1a56c2 75%,rgba(26,86,194,0))}
+  .kv-foot p{margin:0;font-weight:800;line-height:1.5}
+  .kv-date{font-size:3.6cqw}
+  .kv-place{font-size:3.3cqw}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -147,34 +137,21 @@
 <div class="wrap">
 
   <!-- 1. 표지 (포스터) -->
-  <header class="cover" role="img" aria-label="광운 AI·로봇 미래교육 비전 선포식 포스터">
-    <div class="cover-title">
-      <div class="rule"></div>
-      <div class="sub">광운 AI·로봇 미래교육</div>
-      <div class="rule"></div>
-      <div class="main">비전 선포식</div>
-      <div class="cover-when">
-        <p><svg viewBox="0 0 24 24"><path d="M7 11H9V13H7V11M21 5V19C21 20.11 20.11 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H6V1H8V3H16V1H18V3H19C20.11 3 21 3.9 21 5M5 7H19V5H5V7M19 19V9H5V19H19M15 13V11H17V13H15M11 13V11H13V13H11M7 15H9V17H7V15M15 17V15H17V17H15M11 17V15H13V17H11Z"/></svg><span>2026.<b>10.29</b>(목) <em>14:00~18:00</em></span></p>
-        <p><svg viewBox="0 0 24 24"><path d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9A2.5 2.5 0 0 1 12 11.5M12 2A7 7 0 0 0 5 9C5 14.25 12 22 12 22S19 14.25 19 9A7 7 0 0 0 12 2Z"/></svg><span>광운대학교 광운스퀘어</span></p>
-      </div>
-    </div>
-    <div class="cover-spon">
-      <img class="cover-logo" src="kw-logo-white.png" alt="광운대학교 KwangWoon University">
-      <div class="spon-panel">
-        <span class="spon-k">후원사</span>
-        <div class="spon-box">
-          <div class="spon-row">
-            <img src="sponsors/s1-dapa.png?v=4" alt="방위사업청">
-            <img src="sponsors/s2-sen.png?v=4" alt="서울특별시교육청">
-            <img class="sq" src="sponsors/s3-nowon.png?v=4" alt="노원구청">
-            <img src="sponsors/s4-sto.png?v=4" alt="서울관광재단">
-          </div>
-          <div class="spon-row">
-            <img src="sponsors/s5-kiria.png?v=4" alt="한국로봇산업진흥원">
-            <img src="sponsors/s6-kdia.png?v=4" alt="한국방위산업진흥회">
-            <img src="sponsors/s7-kar.png?v=4" alt="한국AI·로봇산업협회">
-          </div>
-        </div>
+  <header class="cover">
+    <div class="kv">
+      <div class="kv-stripe"></div>
+      <div class="kv-stripe2"></div>
+      <span class="kv-brand">ROBOFEST</span>
+      <img class="kv-kw" src="kw-logo.png" alt="광운대학교">
+      <img class="kv-title" src="kv/title-stack.png" alt="광운 AI·로봇 미래교육 비전 선포식 &amp; 지역 상생 한마당">
+      <img class="kv-r kv-ra" src="kv/robot-a.png" alt="">
+      <img class="kv-r kv-rb" src="kv/robot-b.png" alt="">
+      <img class="kv-r kv-rc" src="kv/robot-c.png" alt="">
+      <img class="kv-r kv-rd" src="kv/robot-d.png" alt="">
+      <div class="kv-foot">
+        <span class="kv-rule"></span>
+        <p class="kv-date">2026.10.29 (목) 14:00~18:00</p>
+        <p class="kv-place">광운대학교 광운스퀘어</p>
       </div>
     </div>
   </header>
