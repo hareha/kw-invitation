@@ -53,34 +53,28 @@
     background:#dce9f7 url(kv/bg-campus.jpg) center/100% 100% no-repeat}
   /* 무대 = 화면 그 자체. (세로로 유난히 긴 화면에서만 220cqw에서 멈춰 밖으로 안 나가게 함) */
   .kv-stage{position:absolute;left:0;right:0;bottom:0;height:min(100%,220cqw);container-type:size}
-  .kv-stage img{position:absolute;width:auto;max-width:none}
-  /* 바닥 그림자 (너비 / 높이 / 왼쪽 / 바닥) */
-  .kv-sh{position:absolute;border-radius:50%;filter:blur(.3cqh);
-    background:radial-gradient(closest-side,rgba(16,35,66,.62),rgba(16,35,66,.36) 45%,rgba(16,35,66,.12) 75%,rgba(16,35,66,0) 100%)}
-  /* 큰 로봇만: 발에 가려지지 않게 더 넓고 바깥까지 농도 유지 */
-  /* 큰 로봇: 발이 사각형이라 둥근 사각 그림자 + 흐림 */
-  .kv-sh-a1,.kv-sh-a2{border-radius:22%/35%;filter:blur(.6cqh);
-    background:rgba(10,25,50,.38)}
-  .kv-sh-a1{width:11%;  height:4%;  left: 9.5%;bottom:18.5%}
-  .kv-sh-a2{width:15%;  height:3.5%;left:25%;  bottom:15.5%}
-  .kv-sh-b1{width: 7.5%;height:1%;  left:49%;  bottom:15%}
-  .kv-sh-c1{width: 4.5%;height:.5%; left:64%;  bottom:15%}
-  .kv-sh-d1{width:36.5%;height:4.5%;left:67%;  bottom:13.5%}
-  .kv-sh-p1{width: 7.5%;height:1%;  left:41.5%;bottom:18.5%}
-  .kv-sh-p2{width:11%;  height:1.5%;left:49.5%;bottom:18%}
-  .kv-sh-p3{width:20%;  height:2.5%;left:60%;  bottom:18%}
-  .kv-sh-p4{width: 7%;  height:1%;  left:88%;  bottom:19.5%}
-
-  /* 좌하단 대각 띠 */
-  .kv-stripe{position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(118deg,rgba(26,86,194,.85) 0 7%,rgba(255,255,255,0) 7.2%)}
-  .kv-stripe2{position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(118deg,rgba(255,255,255,.75) 0 14%,rgba(255,255,255,0) 14.2%)}
-
   /* ── 상단 ── */
   .kv-brand{position:absolute;left:6%;top:3%;font-size:3cqw;letter-spacing:.42em;
     font-weight:600;color:#17357f}
   .kv-kw{position:absolute;right:5%;top:2.5%;width:21%}
+
+  /* 에셋 + 그 그림자를 한 덩어리(.kv-g)로 묶음 → 화면 비율이 변해도 같이 움직임 */
+  .kv-g{position:absolute}
+  .kv-g>img{display:block;height:100%;width:auto;max-width:none}
+  /* 그림자: 숫자는 그 에셋 박스 기준 % (0 = 에셋 왼쪽/아래 끝, 100 = 에셋 폭/높이) */
+  .kv-sh{position:absolute;border-radius:50%;filter:blur(.3cqh);
+    background:radial-gradient(closest-side,rgba(16,35,66,.62),rgba(16,35,66,.36) 45%,rgba(16,35,66,.12) 75%,rgba(16,35,66,0) 100%)}
+  /* 큰 로봇: 발이 사각형이라 둥근 사각 그림자 + 흐림 */
+  .kv-sh-a1,.kv-sh-a2{border-radius:22%/35%;filter:blur(.6cqh);background:rgba(10,25,50,.38)}
+  .kv-sh-a1{left:15.6%;bottom:  4.2%;width: 24.5%;height: 6.7%}
+  .kv-sh-a2{left:50.2%;bottom: -0.8%;width: 33.5%;height: 5.9%}
+  .kv-sh-b1{left:36.1%;bottom: -2.7%;width: 49.2%;height: 5.4%}
+  .kv-sh-c1{left:52.4%;bottom: -4.0%;width: 36.3%;height: 4.0%}
+  .kv-sh-d1{left:-16.7%;bottom:-15.4%;width:135.5%;height:34.6%}
+  .kv-sh-p1{left: 3.5%;bottom:  0.0%;width: 12.9%;height: 4.3%}
+  .kv-sh-p2{left:17.3%;bottom: -2.1%;width: 19.0%;height: 6.4%}
+  .kv-sh-p3{left:35.4%;bottom: -2.1%;width: 34.5%;height:10.6%}
+  .kv-sh-p4{left:83.7%;bottom:  4.3%;width: 12.1%;height: 4.3%}
 
   /* ── 로봇·사람 (높이 / 왼쪽 / 바닥) ── */
   .kv-ra    {height:59.5%;left: 2.5%;bottom:16%}
@@ -90,7 +84,7 @@
   .kv-rd    {height:13%;  left:71.5%;bottom:15.5%}
 
   /* ── 제목 / 일시·장소 ── */
-  .kv-title{height:24%;right:6%;top:11.5%}
+  .kv-title{position:absolute;height:24%;width:auto;right:6%;top:11.5%}
   .kv-foot{position:absolute;right:6%;top:36.5%;text-align:right;color:#1e2a89}
   .kv-foot p{margin:0;font-weight:800;line-height:1.35}
   .kv-date{margin:0;font-weight:800;font-size:1.9cqh;letter-spacing:-.01em}
@@ -179,20 +173,27 @@
       <span class="kv-brand">2027 ROBOFEST</span>
       <img class="kv-kw" src="kw-logo.png" alt="광운대학교">
       <div class="kv-stage">
-        <span class="kv-sh kv-sh-p1"></span>
-        <span class="kv-sh kv-sh-p2"></span>
-        <span class="kv-sh kv-sh-p3"></span>
-        <span class="kv-sh kv-sh-p4"></span>
-        <span class="kv-sh kv-sh-a1"></span>
-        <span class="kv-sh kv-sh-a2"></span>
-        <span class="kv-sh kv-sh-b1"></span>
-        <span class="kv-sh kv-sh-c1"></span>
-        <span class="kv-sh kv-sh-d1"></span>
-        <img class="kv-people" src="kv/people.png?v=3" alt="">
-        <img class="kv-rb" src="kv/robot-b.png?v=3" alt="">
-        <img class="kv-ra" src="kv/robot-a.png?v=3" alt="">
-        <img class="kv-rc" src="kv/robot-c.png?v=3" alt="">
-        <img class="kv-rd" src="kv/robot-d.png?v=3" alt="">
+        <div class="kv-g kv-people">
+          <span class="kv-sh kv-sh-p1"></span><span class="kv-sh kv-sh-p2"></span>
+          <span class="kv-sh kv-sh-p3"></span><span class="kv-sh kv-sh-p4"></span>
+          <img src="kv/people.png?v=3" alt="">
+        </div>
+        <div class="kv-g kv-rb">
+          <span class="kv-sh kv-sh-b1"></span>
+          <img src="kv/robot-b.png?v=3" alt="">
+        </div>
+        <div class="kv-g kv-ra">
+          <span class="kv-sh kv-sh-a1"></span><span class="kv-sh kv-sh-a2"></span>
+          <img src="kv/robot-a.png?v=3" alt="">
+        </div>
+        <div class="kv-g kv-rc">
+          <span class="kv-sh kv-sh-c1"></span>
+          <img src="kv/robot-c.png?v=3" alt="">
+        </div>
+        <div class="kv-g kv-rd">
+          <span class="kv-sh kv-sh-d1"></span>
+          <img src="kv/robot-d.png?v=3" alt="">
+        </div>
         <img class="kv-title" src="kv/title-stack-nosub.png?v=1" alt="광운 AI·로봇 미래교육 비전 선포식">
         <div class="kv-foot">
           <span class="kv-rule"></span>
