@@ -46,14 +46,13 @@
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
   /* ===== 표지 =====
-     .kv-stage = 포스터 무대. 기준화면 375x812 비율로 고정되어 있어서
-     아래 숫자들은 전부 "화면 기준 %" 로 읽으면 된다. (1cqh = 화면 높이 1%)
-     위치/크기 조정은 아래 숫자만 바꾸면 됨. */
+     아래 숫자는 전부 화면 기준 % 다. (왼쪽=가로 %, 바닥/높이=세로 %, 1cqh=세로 1%)
+     위치/크기 조정은 숫자만 바꾸면 됨. */
   .cover{position:relative;width:100%;overflow:hidden;background:#eef4fb;container-type:inline-size}
   .kv{position:relative;width:100%;height:100svh;min-height:560px;
     background:#dce9f7 url(kv/bg-campus.jpg) center/100% 100% no-repeat}
-  .kv-stage{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
-    height:min(100%,216.5cqw);aspect-ratio:375/812;container-type:size}
+  /* 무대 = 화면 그 자체. (세로로 유난히 긴 화면에서만 220cqw에서 멈춰 밖으로 안 나가게 함) */
+  .kv-stage{position:absolute;left:0;right:0;bottom:0;height:min(100%,220cqw);container-type:size}
   .kv-stage img{position:absolute;width:auto;max-width:none}
 
   /* 좌하단 대각 띠 */
@@ -65,7 +64,7 @@
   /* ── 상단 ── */
   .kv-brand{position:absolute;left:6%;top:3.2%;font-size:3.1cqw;letter-spacing:.42em;
     font-weight:600;color:#17357f}
-  .kv-stage .kv-kw{position:absolute;right:5%;top:2.6%;width:20.8%}
+  .kv-kw{position:absolute;right:5%;top:2.6%;width:20.8%}
 
   /* ── 로봇·사람 (높이 / 왼쪽 / 바닥) ── */
   .kv-ra    {height:59.40%;left: 3.58%;bottom:15.91%}
@@ -160,9 +159,9 @@
     <div class="kv">
       <div class="kv-stripe"></div>
       <div class="kv-stripe2"></div>
+      <span class="kv-brand">2027 ROBOFEST</span>
+      <img class="kv-kw" src="kw-logo.png" alt="광운대학교">
       <div class="kv-stage">
-        <span class="kv-brand">2027 ROBOFEST</span>
-        <img class="kv-kw" src="kw-logo.png" alt="광운대학교">
         <img class="kv-people" src="kv/people.png?v=3" alt="">
         <img class="kv-rb" src="kv/robot-b.png?v=3" alt="">
         <img class="kv-ra" src="kv/robot-a.png?v=3" alt="">
