@@ -58,17 +58,20 @@
     font-weight:600;color:#17357f}
   .kv-kw{position:absolute;right:5%;top:2.6%;width:26%}
   .kv-title{position:absolute;right:5.5%;top:8.5%;width:46%}
-  .kv-r{position:absolute;bottom:17%;height:auto}
-  .kv-ra{left:1%;width:33%}
-  .kv-rb{left:33%;width:19%}
-  .kv-rc{left:50%;width:19%}
-  .kv-rd{right:1%;width:27%;bottom:17.5%}
-  .kv-foot{position:absolute;left:8%;right:8%;bottom:4.5%;text-align:center;color:#12317a}
-  .kv-rule{display:block;height:2px;margin:0 auto 3.2%;width:72%;
-    background:linear-gradient(90deg,rgba(26,86,194,0),#1a56c2 25%,#1a56c2 75%,rgba(26,86,194,0))}
-  .kv-foot p{margin:0;font-weight:800;line-height:1.5}
-  .kv-date{font-size:3.6cqw}
-  .kv-place{font-size:3.3cqw}
+  /* 로봇: 포스터처럼 왼쪽 큰 로봇 + 가운데로 모인 세 대 */
+  .kv-r{position:absolute}
+  .kv-ra{left:5%;width:31%;bottom:18.5%}
+  .kv-rb{left:39%;width:17.5%;bottom:20.5%}
+  .kv-rc{left:55%;width:17.5%;bottom:20.5%}
+  .kv-rd{right:2.5%;width:25%;bottom:19.8%}
+
+  /* 하단 선·일시·장소 (포스터 좌표/색/크기) */
+  .kv-foot{position:absolute;left:26%;right:4%;top:90.6%;text-align:center;color:#1e2a89}
+  .kv-rule{position:absolute;left:0;right:0;top:-2.1cqw;height:.32cqw;
+    background:linear-gradient(90deg,rgba(225,234,249,0),#e1eaf9 18%,#7cb4e3 46%,#80c0e7 86%,#8387c5 100%)}
+  .kv-foot p{margin:0;font-weight:800;line-height:1.35}
+  .kv-date{font-size:2.9cqw}
+  .kv-place{font-size:2.6cqw;margin-top:.6cqw !important}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
