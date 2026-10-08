@@ -49,7 +49,7 @@
   .cover{position:relative;width:100%;overflow:hidden;background:#eef4fb;container-type:inline-size}
   .kv{position:relative;width:100%;height:100svh;min-height:560px;
     /* u = 포스터 기준 1% 높이. 세로로 긴 화면에서는 가로폭에 맞춰 묶어 그룹이 잘리지 않게 함 */
-    --u:min(1svh,2cqw);
+    --u:min(1svh,2.4cqw);
     /* 후원사 패널 윗변 = 바닥에서 3.6% + 패널높이(18cqw) */
     --pt:calc(3.6% + 18cqw);
     background:#dce9f7 url(kv/bg-campus.jpg) center/cover no-repeat}
@@ -61,19 +61,19 @@
   .kv-brand{position:absolute;left:6%;top:3.2%;font-size:3.1cqw;letter-spacing:.42em;
     font-weight:600;color:#17357f}
   .kv-kw{position:absolute;right:5%;top:2.6%;width:20.8%}
-  .kv-title{position:absolute;right:5.5%;top:10.5%;width:40%}
+  .kv-title{position:absolute;right:6%;top:11.5%;width:55%}
   /* 로봇: 포스터처럼 왼쪽 큰 로봇 + 가운데로 모인 세 대 */
   /* 레퍼런스 포스터의 피사체 높이·중심좌표를 그대로 옮긴 값 (단위 u) */
   .kv-r,.kv-people{position:absolute;left:50%;width:auto;max-width:none}
-  .kv-ra{height:calc(59.566*var(--u));margin-left:calc(-33.219*var(--u));
+  .kv-ra{height:calc(59.566*var(--u));margin-left:calc(-28.428*var(--u));
          bottom:calc(var(--pt) + 3.917*var(--u))}
-  .kv-rb{height:calc(22.337*var(--u));margin-left:calc(-9.648*var(--u));
+  .kv-rb{height:calc(22.337*var(--u));margin-left:calc(-8.909*var(--u));
          bottom:calc(var(--pt) + 4.624*var(--u))}
-  .kv-people{height:calc(25.995*var(--u));margin-left:calc(-1.104*var(--u));
+  .kv-people{height:calc(25.995*var(--u));margin-left:calc(-4.847*var(--u));
          bottom:calc(var(--pt) + 4.530*var(--u))}
-  .kv-rc{height:calc(16.701*var(--u));margin-left:calc(5.156*var(--u));
+  .kv-rc{height:calc(16.701*var(--u));margin-left:calc(1.995*var(--u));
          bottom:calc(var(--pt) + 2.571*var(--u))}
-  .kv-rd{height:calc(16.985*var(--u));margin-left:calc(11.403*var(--u));
+  .kv-rd{height:calc(16.985*var(--u));margin-left:calc(5.458*var(--u));
          bottom:calc(var(--pt) + 4.377*var(--u))}
 
   /* 하단 선·일시·장소 (포스터 좌표/색/크기) */
@@ -81,8 +81,8 @@
   .kv-rule{display:block;width:100%;height:.3cqw;margin:.6cqw 0 .4cqw;background:linear-gradient(90deg,#429eee 0%,#3fa0f7 10%,#6ddff7 25%,#4babf1 38%,#53cbf7 50%,#4eb4f6 62%,#40b2fa 78%,#444fab 88%,#4453c7 100%)}
   .kv-foot p{margin:0;font-weight:800;line-height:1.35}
   .kv-bottom{position:absolute;left:4.6%;right:4.6%;bottom:3.6%}
-  .kv-foot{position:absolute;right:5.5%;top:34.2%;text-align:right;color:#1e2a89}
-  .kv-date{margin:0;font-weight:800;font-size:3.1cqw;letter-spacing:-.01em}
+  .kv-foot{position:absolute;right:6%;top:36.6%;text-align:right;color:#1e2a89}
+  .kv-date{margin:0;font-weight:800;font-size:4.06cqw;letter-spacing:-.01em}
   /* 하단 후원사 패널 */
   .kv-spon{display:flex;flex-direction:column;gap:2.2cqw;background:rgba(255,255,255,.5);border-radius:1.2cqw;padding:2.2cqw 3cqw}
 
@@ -90,7 +90,7 @@
   .kv-spon-row{display:flex;align-items:center;justify-content:space-between;gap:2.4cqw}
   .kv-spon-row img{height:4.6cqw;width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
   .kv-spon-row img.sq{height:6.8cqw}
-  .kv-place{margin:.5cqw 0 0;font-weight:700;font-size:2.9cqw}
+  .kv-place{margin:.5cqw 0 0;font-weight:700;font-size:3.8cqw}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -171,9 +171,9 @@
         <p class="kv-date">2026.10.29 (목) 14:00~18:00</p>
         <p class="kv-place">광운대학교 광운스퀘어</p>
       </div>
-      <img class="kv-r kv-ra" src="kv/robot-a.png?v=2" alt="">
       <img class="kv-people" src="kv/people.png" alt="">
       <img class="kv-r kv-rb" src="kv/robot-b.png?v=2" alt="">
+      <img class="kv-r kv-ra" src="kv/robot-a.png?v=2" alt="">
       <img class="kv-r kv-rc" src="kv/robot-c.png?v=2" alt="">
       <img class="kv-r kv-rd" src="kv/robot-d.png?v=2" alt="">
       <div class="kv-bottom">
