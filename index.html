@@ -67,10 +67,18 @@
   .kv-rd{right:4.5%;width:31%;bottom:13.8%}
 
   /* 하단 선·일시·장소 (포스터 좌표/색/크기) */
-  .kv-foot{position:absolute;right:4%;top:90.6%;text-align:center;color:#1e2a89}
+  .kv-foot{position:absolute;right:4%;top:79.5%;text-align:center;color:#1e2a89}
   .kv-rule{position:absolute;left:0;right:0;top:-2.1cqw;height:.32cqw;background:linear-gradient(90deg,#429eee 0%,#3fa0f7 10%,#6ddff7 25%,#4babf1 38%,#53cbf7 50%,#4eb4f6 62%,#40b2fa 78%,#444fab 88%,#4453c7 100%)}
   .kv-foot p{margin:0;font-weight:800;line-height:1.35}
   .kv-date{font-size:2.9cqw}
+  /* 하단 후원사 패널 */
+  .kv-spon{position:absolute;left:4%;right:4%;bottom:2.5%;display:flex;align-items:center;
+    gap:2.6cqw;background:rgba(255,255,255,.94);border-radius:1.2cqw;padding:1.4cqw 2cqw}
+  .kv-spon-k{flex:0 0 auto;color:#16233d;font-size:2.4cqw;font-weight:800;letter-spacing:.06em}
+  .kv-spon-box{flex:1 1 auto;min-width:0;display:grid;gap:1.4cqw}
+  .kv-spon-row{display:flex;align-items:center;justify-content:space-around;gap:1.8cqw}
+  .kv-spon-row img{height:3.3cqw;width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
+  .kv-spon-row img.sq{height:5cqw}
   .kv-place{font-size:2.6cqw;margin-top:.6cqw !important}
 
   /* 프로그램 */
@@ -146,7 +154,7 @@
       <div class="kv-stripe2"></div>
       <span class="kv-brand">ROBOFEST</span>
       <img class="kv-kw" src="kw-logo.png" alt="광운대학교">
-      <img class="kv-title" src="kv/title-stack.png?v=2" alt="광운 AI·로봇 미래교육 비전 선포식 &amp; 지역 상생 한마당">
+      <img class="kv-title" src="kv/title-stack-nosub.png?v=1" alt="광운 AI·로봇 미래교육 비전 선포식 &amp; 지역 상생 한마당">
       <img class="kv-r kv-ra" src="kv/robot-a.png?v=2" alt="">
       <img class="kv-people" src="kv/people.png" alt="">
       <img class="kv-r kv-rb" src="kv/robot-b.png?v=2" alt="">
@@ -156,6 +164,22 @@
         <span class="kv-rule"></span>
         <p class="kv-date">2026.10.29 (목) 14:00~18:00</p>
         <p class="kv-place">광운대학교 광운스퀘어</p>
+      </div>
+      <div class="kv-spon">
+        <span class="kv-spon-k">후원사</span>
+        <div class="kv-spon-box">
+          <div class="kv-spon-row">
+            <img src="sponsors/s1-dapa.png?v=4" alt="방위사업청">
+            <img src="sponsors/s2-sen.png?v=4" alt="서울특별시교육청">
+            <img class="sq" src="sponsors/s3-nowon.png?v=4" alt="노원구청">
+            <img src="sponsors/s4-sto.png?v=4" alt="서울관광재단">
+          </div>
+          <div class="kv-spon-row">
+            <img src="sponsors/s5-kiria.png?v=4" alt="한국로봇산업진흥원">
+            <img src="sponsors/s6-kdia.png?v=4" alt="한국방위산업진흥회">
+            <img src="sponsors/s7-kar.png?v=4" alt="한국AI·로봇산업협회">
+          </div>
+        </div>
       </div>
     </div>
   </header>
