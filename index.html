@@ -67,19 +67,19 @@
   .kv-rd{right:4.5%;width:27%;bottom:10.6%}
 
   /* 하단 선·일시·장소 (포스터 좌표/색/크기) */
-  .kv-foot{align-self:flex-end;width:fit-content;text-align:center;color:#1e2a89}
-  .kv-rule{display:block;width:100%;height:.32cqw;margin-bottom:1.8cqw;background:linear-gradient(90deg,#429eee 0%,#3fa0f7 10%,#6ddff7 25%,#4babf1 38%,#53cbf7 50%,#4eb4f6 62%,#40b2fa 78%,#444fab 88%,#4453c7 100%)}
+
+  .kv-rule{display:block;width:100%;height:.3cqw;margin:.6cqw 0 .4cqw;background:linear-gradient(90deg,#429eee 0%,#3fa0f7 10%,#6ddff7 25%,#4babf1 38%,#53cbf7 50%,#4eb4f6 62%,#40b2fa 78%,#444fab 88%,#4453c7 100%)}
   .kv-foot p{margin:0;font-weight:800;line-height:1.35}
-  .kv-bottom{position:absolute;left:4%;right:4%;bottom:2.6cqw;display:flex;flex-direction:column;gap:2.6cqw}
-  .kv-date{font-size:3.4cqw}
+  .kv-bottom{position:absolute;left:4%;right:4%;bottom:2.6cqw}
+  .kv-date{margin:0;font-weight:800;font-size:3.5cqw}
   /* 하단 후원사 패널 */
-  .kv-spon{display:flex;align-items:center;gap:3cqw;background:rgba(255,255,255,.94);border-radius:1.2cqw;padding:2cqw 2.4cqw}
-  .kv-spon-k{flex:0 0 auto;color:#16233d;font-size:2.8cqw;font-weight:800;letter-spacing:.06em}
-  .kv-spon-box{flex:1 1 auto;min-width:0;display:grid;gap:2.2cqw}
-  .kv-spon-row{display:flex;align-items:center;justify-content:space-between;gap:1.8cqw}
+  .kv-spon{display:flex;flex-direction:column;align-items:stretch;gap:1.6cqw;background:rgba(255,255,255,.94);border-radius:1.2cqw;padding:2.2cqw 3cqw 2.4cqw;text-align:center;color:#1e2a89}
+
+
+  .kv-spon-row{display:flex;align-items:center;justify-content:space-between;gap:2.4cqw}
   .kv-spon-row img{height:4.6cqw;width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
   .kv-spon-row img.sq{height:6.8cqw}
-  .kv-place{font-size:3.05cqw;margin-top:.6cqw !important}
+  .kv-place{margin:.4cqw 0 0;font-weight:800;font-size:3.1cqw}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -161,26 +161,21 @@
       <img class="kv-r kv-rc" src="kv/robot-c.png?v=2" alt="">
       <img class="kv-r kv-rd" src="kv/robot-d.png?v=2" alt="">
       <div class="kv-bottom">
-      <div class="kv-foot">
-          <span class="kv-rule"></span>
+        <div class="kv-spon">
           <p class="kv-date">2026.10.29 (목) 14:00~18:00</p>
           <p class="kv-place">광운대학교 광운스퀘어</p>
-        </div>
-        <div class="kv-spon">
-          <span class="kv-spon-k">후원사</span>
-          <div class="kv-spon-box">
-            <div class="kv-spon-row">
+          <span class="kv-rule"></span>
+          <div class="kv-spon-row">
               <img src="sponsors/s1-dapa.png?v=4" alt="방위사업청">
               <img src="sponsors/s2-sen.png?v=4" alt="서울특별시교육청">
               <img class="sq" src="sponsors/s3-nowon.png?v=4" alt="노원구청">
               <img src="sponsors/s4-sto.png?v=4" alt="서울관광재단">
             </div>
-            <div class="kv-spon-row">
+          <div class="kv-spon-row">
               <img src="sponsors/s5-kiria.png?v=4" alt="한국로봇산업진흥원">
               <img src="sponsors/s6-kdia.png?v=4" alt="한국방위산업진흥회">
               <img src="sponsors/s7-kar.png?v=4" alt="한국AI·로봇산업협회">
             </div>
-          </div>
         </div>
       </div>
     </div>
