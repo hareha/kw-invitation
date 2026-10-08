@@ -61,7 +61,7 @@
   .kv-brand{position:absolute;left:6%;top:3.2%;font-size:3.1cqw;letter-spacing:.42em;
     font-weight:600;color:#17357f}
   .kv-kw{position:absolute;right:5%;top:2.6%;width:20.8%}
-  .kv-title{position:absolute;right:6%;top:11.5%;width:55%}
+  .kv-title{position:absolute;right:6%;top:calc(11.5*var(--u));height:calc(24*var(--u));width:auto}
   /* 로봇: 포스터처럼 왼쪽 큰 로봇 + 가운데로 모인 세 대 */
   /* 레퍼런스 포스터의 피사체 높이·중심좌표를 그대로 옮긴 값 (단위 u) */
   .kv-r,.kv-people{position:absolute;left:50%;width:auto;max-width:none}
@@ -78,11 +78,11 @@
 
   /* 하단 선·일시·장소 (포스터 좌표/색/크기) */
 
-  .kv-rule{display:block;width:100%;height:.3cqw;margin:.6cqw 0 .4cqw;background:linear-gradient(90deg,#429eee 0%,#3fa0f7 10%,#6ddff7 25%,#4babf1 38%,#53cbf7 50%,#4eb4f6 62%,#40b2fa 78%,#444fab 88%,#4453c7 100%)}
+  .kv-rule{display:block;width:100%;height:calc(.139*var(--u));margin:calc(.277*var(--u)) 0 calc(.185*var(--u));background:linear-gradient(90deg,#429eee 0%,#3fa0f7 10%,#6ddff7 25%,#4babf1 38%,#53cbf7 50%,#4eb4f6 62%,#40b2fa 78%,#444fab 88%,#4453c7 100%)}
   .kv-foot p{margin:0;font-weight:800;line-height:1.35}
   .kv-bottom{position:absolute;left:4.6%;right:4.6%;bottom:3.6%}
-  .kv-foot{position:absolute;right:6%;top:36.6%;text-align:right;color:#1e2a89}
-  .kv-date{margin:0;font-weight:800;font-size:4.06cqw;letter-spacing:-.01em}
+  .kv-foot{position:absolute;right:6%;top:calc(36.6*var(--u));text-align:right;color:#1e2a89}
+  .kv-date{margin:0;font-weight:800;font-size:calc(1.873*var(--u));letter-spacing:-.01em}
   /* 하단 후원사 패널 */
   .kv-spon{display:flex;flex-direction:column;gap:2.2cqw;background:rgba(255,255,255,.5);border-radius:1.2cqw;padding:2.2cqw 3cqw}
 
@@ -90,7 +90,7 @@
   .kv-spon-row{display:flex;align-items:center;justify-content:space-between;gap:2.4cqw}
   .kv-spon-row img{height:4.6cqw;width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
   .kv-spon-row img.sq{height:6.8cqw}
-  .kv-place{margin:.5cqw 0 0;font-weight:700;font-size:3.8cqw}
+  .kv-place{margin:calc(.23*var(--u)) 0 0;font-weight:700;font-size:calc(1.755*var(--u))}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
