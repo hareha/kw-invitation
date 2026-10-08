@@ -54,6 +54,18 @@
   /* 무대 = 화면 그 자체. (세로로 유난히 긴 화면에서만 220cqw에서 멈춰 밖으로 안 나가게 함) */
   .kv-stage{position:absolute;left:0;right:0;bottom:0;height:min(100%,220cqw);container-type:size}
   .kv-stage img{position:absolute;width:auto;max-width:none}
+  /* 바닥 그림자 (너비 / 높이 / 왼쪽 / 바닥) */
+  .kv-sh{position:absolute;border-radius:50%;filter:blur(.3cqh);
+    background:radial-gradient(closest-side,rgba(16,35,66,.62),rgba(16,35,66,.36) 45%,rgba(16,35,66,.12) 75%,rgba(16,35,66,0) 100%)}
+  .kv-sh-a1{width: 6.5%;height:1%;  left:12.5%;bottom:17.5%}
+  .kv-sh-a2{width:16.5%;height:2%;  left:29%;  bottom:13%}
+  .kv-sh-b1{width: 7.5%;height:1%;  left:49%;  bottom:13%}
+  .kv-sh-c1{width: 4.5%;height:.5%; left:64%;  bottom:13%}
+  .kv-sh-d1{width:36.5%;height:4.5%;left:67%;  bottom:11.5%}
+  .kv-sh-p1{width: 7.5%;height:1%;  left:41.5%;bottom:16.5%}
+  .kv-sh-p2{width:11%;  height:1.5%;left:49.5%;bottom:16%}
+  .kv-sh-p3{width:20%;  height:2.5%;left:60%;  bottom:16%}
+  .kv-sh-p4{width: 7%;  height:1%;  left:88%;  bottom:17.5%}
 
   /* 좌하단 대각 띠 */
   .kv-stripe{position:absolute;inset:0;pointer-events:none;
@@ -83,10 +95,11 @@
 
   /* ── 하단 후원사 패널 (화면 전체 폭 기준) ── */
   .kv-bottom{position:absolute;left:4.5%;right:4.5%;bottom:3.5%}
-  .kv-spon{display:flex;flex-direction:column;gap:2cqw;background:rgba(255,255,255,.5);border-radius:1cqw;padding:2cqw 3cqw}
+  .kv-spon{display:flex;flex-direction:column;gap:2cqw;background:rgba(255,255,255,.9);border-radius:1cqw;padding:2cqw 3cqw}
   .kv-spon-row{display:flex;align-items:center;justify-content:space-between;gap:2.5cqw}
   .kv-spon-row img{height:4.5cqw;width:auto;max-width:100%;display:block;flex:0 1 auto;object-fit:contain}
   .kv-spon-row img.sq{height:7cqw}
+  .kv-spon-row:last-child{justify-content:center}
 
   /* 프로그램 */
   .program{list-style:none;margin:0;padding:0}
@@ -162,6 +175,15 @@
       <span class="kv-brand">2027 ROBOFEST</span>
       <img class="kv-kw" src="kw-logo.png" alt="광운대학교">
       <div class="kv-stage">
+        <span class="kv-sh kv-sh-p1"></span>
+        <span class="kv-sh kv-sh-p2"></span>
+        <span class="kv-sh kv-sh-p3"></span>
+        <span class="kv-sh kv-sh-p4"></span>
+        <span class="kv-sh kv-sh-a1"></span>
+        <span class="kv-sh kv-sh-a2"></span>
+        <span class="kv-sh kv-sh-b1"></span>
+        <span class="kv-sh kv-sh-c1"></span>
+        <span class="kv-sh kv-sh-d1"></span>
         <img class="kv-people" src="kv/people.png?v=3" alt="">
         <img class="kv-rb" src="kv/robot-b.png?v=3" alt="">
         <img class="kv-ra" src="kv/robot-a.png?v=3" alt="">
