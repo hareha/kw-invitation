@@ -58,8 +58,9 @@
   .kv-sh{position:absolute;border-radius:50%;filter:blur(.3cqh);
     background:radial-gradient(closest-side,rgba(16,35,66,.62),rgba(16,35,66,.36) 45%,rgba(16,35,66,.12) 75%,rgba(16,35,66,0) 100%)}
   /* 큰 로봇만: 발에 가려지지 않게 더 넓고 바깥까지 농도 유지 */
-  .kv-sh-a1,.kv-sh-a2{filter:blur(.2cqh);
-    background:radial-gradient(closest-side,rgba(10,25,50,.60),rgba(10,25,50,.55) 55%,rgba(10,25,50,.32) 80%,rgba(10,25,50,0) 100%)}
+  /* 큰 로봇: 발이 사각형이라 둥근 사각 그림자 + 흐림 */
+  .kv-sh-a1,.kv-sh-a2{border-radius:22%/35%;filter:blur(.6cqh);
+    background:rgba(10,25,50,.38)}
   .kv-sh-a1{width:11%;  height:4%;  left: 9.5%;bottom:18.5%}
   .kv-sh-a2{width:15%;  height:3.5%;left:25%;  bottom:15.5%}
   .kv-sh-b1{width: 7.5%;height:1%;  left:49%;  bottom:15%}
