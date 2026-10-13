@@ -78,26 +78,8 @@
     display:flex;flex-direction:column;align-items:flex-end}
   .sp-photo{display:block;height:26cqh;width:auto;max-width:none;margin-right:-11.7cqw}
   .kv-keynote{position:relative;width:38cqw;margin-top:1.5cqw;text-align:right;color:#144185}
-  /* 밝은 흰 판 + 왼쪽을 지나는 파란 사선 하나 */
-  .kv-keynote::before{content:"";position:absolute;inset:-1.5cqw -5cqw -1.5cqw -9cqw;
-    transform:skewX(-14deg);
-    background:linear-gradient(to right,
-      rgba(255,255,255,.55)  0    7%,
-      rgba(255,255,255,.96)  13%  64%,
-      rgba(228,241,253,.88) 100%)}
-  .kv-keynote::after{content:"";position:absolute;top:-5cqw;bottom:-4cqw;left:-9cqw;width:4.5cqw;
-    transform:skewX(-14deg);
-    background:linear-gradient(to right,rgba(41,124,205,.75),rgba(96,170,228,.55))}
-  .kv-keynote>*{position:relative}   /* 글자는 배경 레이어 위 */
-  .kv-keynote p{margin:0;line-height:1.25}
-  .kn-top{display:flex;align-items:center;justify-content:flex-end;gap:1.8cqw;font-size:3.25cqw;font-weight:800;letter-spacing:-.01em}
-  .kn-pill{background:#183770;color:#f2f7fd;font-size:2.6cqw;font-weight:700;letter-spacing:.02em;
-    padding:1cqw 2.1cqw;border-radius:99px;white-space:nowrap}
-  .kn-rule{display:block;height:1px;background:#253f72;margin:2cqw 0 2.2cqw}
-  .kn-main{font-size:5.6cqw;font-weight:900;letter-spacing:-.03em;
-    background:linear-gradient(180deg,#15448c 0%,#174189 55%,#173f7d 100%);
-    -webkit-background-clip:text;background-clip:text;color:transparent}
-  .kn-sub{font-size:2.7cqw;font-weight:600;margin-top:1.5cqw;color:#1a305f;letter-spacing:-.01em}
+  /* 기조연설 블록: 포스터에서 그대로 오려온 이미지 */
+  .kn-img{display:block;width:50cqw;height:auto;max-width:none;margin:-2cqw -7cqw -2cqw 0}
 
   /* ── 제목 / 일시·장소 ── */
   .kv-title{position:absolute;height:24%;width:auto;right:6%;top:11.5%}
@@ -220,12 +202,7 @@
         </div>
         <div class="kv-speaker">
           <img class="sp-photo" src="kv/hank.png?v=1" alt="행크 로저스">
-          <div class="kv-keynote">
-          <p class="kn-top"><span class="kn-pill">기조연설</span>행크 로저스</p>
-          <span class="kn-rule"></span>
-          <p class="kn-main">테트리스 창업자</p>
-          <p class="kn-sub">비디오 게임 디자이너 / 기업가</p>
-          </div>
+          <img class="kn-img" src="kv/keynote.png?v=2" alt="기조연설 행크 로저스 — 테트리스 창업자, 비디오 게임 디자이너 / 기업가">
         </div>
         <img class="kv-title" src="kv/title-stack-nosub.png?v=2" alt="광운 AI·로봇 미래교육 비전 선포식">
         <div class="kv-foot">
