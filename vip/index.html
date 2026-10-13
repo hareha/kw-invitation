@@ -46,11 +46,33 @@
   .sign{display:block;width:190px;max-width:60%;margin:32px auto 0}
 
   /* ===== 표지: 포스터 1장 =====
-     kv/poster.jpg = 원본 포스터(1041x1483) 위아래를 가장자리 색으로 늘려 1041x2313(비율 0.45)로 만든 것.
-     세로비 0.45 이상인 화면에서는 세로만 잘려서 포스터 내용은 항상 전부 보인다. */
-  .cover{position:relative;width:100%;overflow:hidden;background:#dce9f7}
-  .kv{width:100%;height:100svh;min-height:560px;
-    background:#dce9f7 url(/kv/poster.jpg?v=2) center/cover no-repeat}
+     높이를 포스터 비율(1039:1483)에 맞춰서 위아래 여백 없이 꽉 맞춘다. */
+  .cover{position:relative;width:100%;background:#dce9f7}
+  .kv{width:100%;aspect-ratio:1039/1483;
+    background:#dce9f7 url(/kv/poster.jpg?v=3) center/100% 100% no-repeat}
+
+  /* ===== VIP 초청의 글 (VIP 전용 P.2) ===== */
+  .vip{position:relative;margin:44px 18px;padding:54px 24px 48px;text-align:center;color:#f2eadb;
+    background:linear-gradient(160deg,#0b1636 0%,#13265c 48%,#0b1636 100%)}
+  .vip::before{content:"";position:absolute;inset:0;border:1px solid rgba(201,163,73,.55);pointer-events:none}
+  .vip::after{content:"";position:absolute;inset:6px;border:1px solid rgba(201,163,73,.3);pointer-events:none}
+  .vip-eyebrow{font-size:11px;letter-spacing:.42em;font-weight:600;color:#c9a349;margin:0 0 10px}
+  .vip h2{display:block;font-family:Georgia,"Times New Roman",serif;font-size:52px;line-height:1;
+    letter-spacing:.14em;font-weight:700;margin:0;
+    background:linear-gradient(180deg,#f0d898 0%,#c9a349 55%,#9a7628 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .vip-sub{font-size:15px;font-weight:700;letter-spacing:.22em;color:#e6d6ae;margin:12px 0 0}
+  .vip-rule{display:block;width:120px;height:1px;margin:22px auto 26px;
+    background:linear-gradient(90deg,rgba(201,163,73,0),#c9a349 50%,rgba(201,163,73,0))}
+  .vip p.t{font-size:clamp(13px,3.6vw,14.5px);line-height:2;color:#e8e3d6;font-weight:500;margin:0 0 18px}
+  .vip-when{margin:30px auto 26px;max-width:320px;display:grid;gap:10px;
+    border:1px solid rgba(201,163,73,.45);padding:18px 16px;background:rgba(201,163,73,.06)}
+  .vip-row{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:center;text-align:left}
+  .vip-k{font-size:11px;font-weight:800;letter-spacing:.06em;color:#0b1636;background:#c9a349;
+    padding:6px 0;text-align:center}
+  .vip-v{font-size:clamp(12.5px,3.4vw,14px);font-weight:700;line-height:1.5;color:#f4ecda}
+  .vip-close{font-size:clamp(13px,3.6vw,14.5px);line-height:2;color:#e8e3d6;font-weight:600;margin:0}
+  .vip-tbd{color:#c9a349}
 
   /* 프로그램 */
   .host{font-size:14px;font-weight:700;color:var(--sub);margin:-14px 0 24px;letter-spacing:.02em}
