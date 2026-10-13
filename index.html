@@ -68,22 +68,23 @@
   .kv-sh-a1,.kv-sh-a2{border-radius:50%;filter:blur(.4cqh);background:rgba(10,25,50,.55)}
   .kv-sh-a1{left:15.8%;bottom:  4.5%;width: 31.0%;height: 6.0%}
   .kv-sh-a2{left:62.0%;bottom: -0.8%;width: 33.5%;height: 5.9%}
-  /* 작은 이족보행 로봇 2대: 조금 더 진하게 */
-  .kv-sh-b1,.kv-sh-c1{background:rgba(10,25,50,.65)}
-  .kv-sh-b1{left:36.1%;bottom: -2.7%;width: 49.2%;height: 5.4%}
-  .kv-sh-c1{left:52.4%;bottom: -4.0%;width: 36.3%;height: 4.0%}
-  .kv-sh-d1{left:-16.7%;bottom:-15.4%;width:135.5%;height:34.6%}
-  .kv-sh-p1{left: 3.5%;bottom:  0.0%;width: 12.9%;height: 4.3%}
-  .kv-sh-p2{left:17.3%;bottom: -2.1%;width: 19.0%;height: 6.4%}
-  .kv-sh-p3{left:35.4%;bottom: -2.1%;width: 34.5%;height:10.6%}
-  .kv-sh-p4{left:83.7%;bottom:  4.3%;width: 12.1%;height: 4.3%}
 
   /* ── 로봇·사람 (높이 / 왼쪽 / 바닥) ── */
   .kv-ra    {height:59.5%;left: 4.5%;bottom:16%}
-  .kv-rb    {height:18.5%;left:43.5%;bottom:15.5%}
-  .kv-people{height:23.5%;left:39.5%;bottom:18.5%}
-  .kv-rc    {height:12.5%;left:57.5%;bottom:15.5%}
-  .kv-rd    {height:13%;  left:71.5%;bottom:15.5%}
+
+  /* ── 기조연설: 행크 로저스 ── */
+  .kv-hank{height:28%;left:52.5%;bottom:13.5%}
+  .kv-keynote{position:absolute;left:52%;right:4%;bottom:43%;text-align:left;color:#16307a}
+  .kv-keynote::before{content:"";position:absolute;inset:-5cqw -4cqw -4cqw -7cqw;
+    background:radial-gradient(70% 70% at 45% 50%,rgba(244,248,253,.92),rgba(244,248,253,0) 72%)}
+  .kv-keynote>*{position:relative}
+  .kv-keynote p{margin:0;line-height:1.25}
+  .kn-top{display:flex;align-items:center;gap:2cqw;font-size:3.8cqw;font-weight:800;letter-spacing:-.01em}
+  .kn-pill{background:#16307a;color:#fff;font-size:3cqw;font-weight:700;letter-spacing:.02em;
+    padding:1.1cqw 2.4cqw;border-radius:99px;white-space:nowrap}
+  .kn-rule{display:block;height:1px;background:#16307a;opacity:.6;margin:2.4cqw 0 2.6cqw}
+  .kn-main{font-size:6.5cqw;font-weight:900;letter-spacing:-.03em}
+  .kn-sub{font-size:3.1cqw;font-weight:600;margin-top:1.8cqw;color:#1d3a86;letter-spacing:-.01em}
 
   /* ── 제목 / 일시·장소 ── */
   .kv-title{position:absolute;height:24%;width:auto;right:6%;top:11.5%}
@@ -200,26 +201,16 @@
       <span class="kv-brand">2027 ROBOFEST</span>
       <img class="kv-kw" src="kw-logo.png" alt="광운대학교">
       <div class="kv-stage">
-        <div class="kv-g kv-people">
-          <span class="kv-sh kv-sh-p1"></span><span class="kv-sh kv-sh-p2"></span>
-          <span class="kv-sh kv-sh-p3"></span><span class="kv-sh kv-sh-p4"></span>
-          <img src="kv/people.png?v=3" alt="">
-        </div>
-        <div class="kv-g kv-rb">
-          <span class="kv-sh kv-sh-b1"></span>
-          <img src="kv/robot-b.png?v=3" alt="">
-        </div>
         <div class="kv-g kv-ra">
           <span class="kv-sh kv-sh-a1"></span><span class="kv-sh kv-sh-a2"></span>
           <img src="kv/robot-a.png?v=3" alt="">
         </div>
-        <div class="kv-g kv-rc">
-          <span class="kv-sh kv-sh-c1"></span>
-          <img src="kv/robot-c.png?v=3" alt="">
-        </div>
-        <div class="kv-g kv-rd">
-          <span class="kv-sh kv-sh-d1"></span>
-          <img src="kv/robot-d.png?v=3" alt="">
+        <div class="kv-g kv-hank"><img src="kv/hank.png?v=1" alt="행크 로저스"></div>
+        <div class="kv-keynote">
+          <p class="kn-top"><span class="kn-pill">기조연설</span>행크 로저스</p>
+          <span class="kn-rule"></span>
+          <p class="kn-main">테트리스 창업자</p>
+          <p class="kn-sub">비디오 게임 디자이너 / 기업가</p>
         </div>
         <img class="kv-title" src="kv/title-stack-nosub.png?v=1" alt="광운 AI·로봇 미래교육 비전 선포식">
         <div class="kv-foot">
