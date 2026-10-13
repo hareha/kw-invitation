@@ -77,38 +77,34 @@
   .kv-speaker{position:absolute;z-index:2;right:4%;bottom:17%;
     display:flex;flex-direction:column;align-items:flex-end}
   .sp-photo{display:block;height:26cqh;width:auto;max-width:none;margin-right:-11.7cqw}
-  .kv-keynote{position:relative;width:38cqw;margin-top:1.5cqw;text-align:right;color:#11346f}
-  /* 포스터의 사선 레이어 배경 (기울어진 박스 안에서 좌→우 하드스톱 = 평행 사선 띠) */
-  .kv-keynote::before{content:"";position:absolute;inset:-1.5cqw -5cqw -1.5cqw -6cqw;
+  .kv-keynote{position:relative;width:38cqw;margin-top:1.5cqw;text-align:right;color:#144185}
+  /* 포스터 배경: 왼쪽 파랑 띠 묶음 + 밝은 흰 판 (기울어진 박스 안 좌→우 하드스톱) */
+  .kv-keynote::before{content:"";position:absolute;inset:-1.5cqw -5cqw -1.5cqw -11cqw;
     transform:skewX(-14deg);
-    background:
-      linear-gradient(to right,
-        rgba(22,48,122,.92) 0 2.4%,
-        rgba(255,255,255,0) 2.4% 4.2%,
-        rgba(255,255,255,.55) 4.2% 6.4%,
-        rgba(255,255,255,0) 6.4% 7.4%,
-        rgba(47,111,208,.5) 7.4% 8.4%,
-        rgba(255,255,255,0) 8.4% 10%,
-        rgba(255,255,255,.88) 10% 45%,
-        rgba(240,247,255,.78) 70%,
-        rgba(214,233,255,.6) 100%)}
-  .kn-fx{position:absolute;left:-8.5cqw;bottom:-6cqw;width:13cqw;height:6.5cqw;display:block;
-    transform:skewX(-14deg);
-    background:linear-gradient(to right,rgba(47,111,208,.12),rgba(47,111,208,.6) 50%,rgba(94,170,235,.8))}
+    background:linear-gradient(to right,
+      rgba(12,128,185,.92)  0    4.5%,
+      rgba(10,118,170,.88)  4.5%  8.5%,
+      rgba(72,182,224,.85)  8.5% 12.5%,
+      rgba(36,131,188,.9)  12.5% 16.5%,
+      rgba(34,164,224,.85) 16.5% 20.5%,
+      rgba(128,198,245,.85) 20.5% 25%,
+      rgba(12,118,216,.9)  25%   29%,
+      rgba(255,255,255,.94) 29%  66%,
+      rgba(226,240,252,.86) 100%)}
   /* 각도가 다른 보조 사선 */
-  .kv-keynote::after{content:"";position:absolute;top:-4cqw;bottom:-3cqw;left:-9cqw;width:5cqw;
+  .kv-keynote::after{content:"";position:absolute;top:-4cqw;bottom:-3cqw;left:-15cqw;width:5cqw;
     transform:skewX(-27deg);
     background:linear-gradient(to right,rgba(125,180,235,0),rgba(125,180,235,.42) 55%,rgba(255,255,255,.55))}
-  .kv-keynote>*{position:relative}
+  .kv-keynote>*{position:relative}   /* 글자는 배경 레이어 위 */
   .kv-keynote p{margin:0;line-height:1.25}
   .kn-top{display:flex;align-items:center;justify-content:flex-end;gap:1.8cqw;font-size:3.25cqw;font-weight:800;letter-spacing:-.01em}
-  .kn-pill{background:#1b386c;color:#f2f7fd;font-size:2.6cqw;font-weight:700;letter-spacing:.02em;
+  .kn-pill{background:#183770;color:#f2f7fd;font-size:2.6cqw;font-weight:700;letter-spacing:.02em;
     padding:1cqw 2.1cqw;border-radius:99px;white-space:nowrap}
   .kn-rule{display:block;height:1px;background:#253f72;margin:2cqw 0 2.2cqw}
   .kn-main{font-size:5.6cqw;font-weight:900;letter-spacing:-.03em;
-    background:linear-gradient(180deg,#16376e 0%,#153468 55%,#132b5a 100%);
+    background:linear-gradient(180deg,#15448c 0%,#174189 55%,#173f7d 100%);
     -webkit-background-clip:text;background-clip:text;color:transparent}
-  .kn-sub{font-size:2.7cqw;font-weight:600;margin-top:1.5cqw;color:#142956;letter-spacing:-.01em}
+  .kn-sub{font-size:2.7cqw;font-weight:600;margin-top:1.5cqw;color:#1a305f;letter-spacing:-.01em}
 
   /* ── 제목 / 일시·장소 ── */
   .kv-title{position:absolute;height:24%;width:auto;right:6%;top:11.5%}
