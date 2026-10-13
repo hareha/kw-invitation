@@ -78,23 +78,16 @@
     display:flex;flex-direction:column;align-items:flex-end}
   .sp-photo{display:block;height:26cqh;width:auto;max-width:none;margin-right:-11.7cqw}
   .kv-keynote{position:relative;width:38cqw;margin-top:1.5cqw;text-align:right;color:#144185}
-  /* 포스터 배경: 왼쪽 파랑 띠 묶음 + 밝은 흰 판 (기울어진 박스 안 좌→우 하드스톱) */
-  .kv-keynote::before{content:"";position:absolute;inset:-1.5cqw -5cqw -1.5cqw -11cqw;
+  /* 밝은 흰 판 + 왼쪽을 지나는 파란 사선 하나 */
+  .kv-keynote::before{content:"";position:absolute;inset:-1.5cqw -5cqw -1.5cqw -9cqw;
     transform:skewX(-14deg);
     background:linear-gradient(to right,
-      rgba(12,128,185,.92)  0    4.5%,
-      rgba(10,118,170,.88)  4.5%  8.5%,
-      rgba(72,182,224,.85)  8.5% 12.5%,
-      rgba(36,131,188,.9)  12.5% 16.5%,
-      rgba(34,164,224,.85) 16.5% 20.5%,
-      rgba(128,198,245,.85) 20.5% 25%,
-      rgba(12,118,216,.9)  25%   29%,
-      rgba(255,255,255,.94) 29%  66%,
-      rgba(226,240,252,.86) 100%)}
-  /* 각도가 다른 보조 사선 */
-  .kv-keynote::after{content:"";position:absolute;top:-4cqw;bottom:-3cqw;left:-15cqw;width:5cqw;
-    transform:skewX(-27deg);
-    background:linear-gradient(to right,rgba(125,180,235,0),rgba(125,180,235,.42) 55%,rgba(255,255,255,.55))}
+      rgba(255,255,255,.55)  0    7%,
+      rgba(255,255,255,.96)  13%  64%,
+      rgba(228,241,253,.88) 100%)}
+  .kv-keynote::after{content:"";position:absolute;top:-5cqw;bottom:-4cqw;left:-9cqw;width:4.5cqw;
+    transform:skewX(-14deg);
+    background:linear-gradient(to right,rgba(41,124,205,.75),rgba(96,170,228,.55))}
   .kv-keynote>*{position:relative}   /* 글자는 배경 레이어 위 */
   .kv-keynote p{margin:0;line-height:1.25}
   .kn-top{display:flex;align-items:center;justify-content:flex-end;gap:1.8cqw;font-size:3.25cqw;font-weight:800;letter-spacing:-.01em}
@@ -228,7 +221,6 @@
         <div class="kv-speaker">
           <img class="sp-photo" src="/kv/hank.png?v=1" alt="행크 로저스">
           <div class="kv-keynote">
-            <span class="kn-fx" aria-hidden="true"></span>
           <p class="kn-top"><span class="kn-pill">기조연설</span>행크 로저스</p>
           <span class="kn-rule"></span>
           <p class="kn-main">테트리스 창업자</p>
