@@ -22,10 +22,10 @@
 
   /* 공통 프레임 (초청장 테두리) */
   .frame{position:relative;margin:44px 18px;padding:60px 22px 52px;background:var(--paper);text-align:center}
-  /* 테두리: 바깥 각진 굵은 선 + 안쪽 둥근 가는 선 + 모서리 마름모 (SVG 9슬라이스) */
+  /* 테두리: 모서리를 45°로 깎은 팔각 이중선 (SVG 9슬라이스 — 모서리 각이 안 찌그러짐) */
   .frame::before{content:"";position:absolute;inset:0;pointer-events:none;
     border:40px solid transparent;
-    border-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120"><rect x="2" y="2" width="116" height="116" fill="none" stroke="%23123f94" stroke-width="2.2"/><rect x="11" y="11" width="98" height="98" rx="13" fill="none" stroke="%232c4f9e" stroke-width="1.1"/><path d="M6.5 3.8L9.2 6.5L6.5 9.2L3.8 6.5ZM113.5 3.8L116.2 6.5L113.5 9.2L110.8 6.5ZM6.5 110.8L9.2 113.5L6.5 116.2L3.8 113.5ZM113.5 110.8L116.2 113.5L113.5 116.2L110.8 113.5Z" fill="%23123f94"/></svg>') 40 / 40px stretch}
+    border-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120"><path d="M16 2H104L118 16V104L104 118H16L2 104V16Z" fill="none" stroke="%23123f94" stroke-width="2.2"/><path d="M20 9H100L111 20V100L100 111H20L9 100V20Z" fill="none" stroke="%232c4f9e" stroke-width="1"/></svg>') 40 / 40px stretch}
   .frame.letter{padding-block:72px 64px}
   .corner{position:absolute;width:56px;height:56px;z-index:1;pointer-events:none}
   .corner.tl{top:0;left:0}
