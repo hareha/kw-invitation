@@ -10,22 +10,27 @@ ROOT = pathlib.Path(__file__).parent
 VIPREPO = ROOT.parent / "광운대-vip"
 src = (ROOT / "master.html").read_text(encoding="utf-8")
 
-# --- VIP 섹션 범위 찾기
-m = re.search(r"\n  <!-- 2\. VIP 귀빈 초청의 글 \(VIP 전용\) -->\n.*?\n  </section>\n", src, re.S)
-assert m, "VIP 섹션을 찾지 못했습니다"
+def cut(text, comment):
+    """<!-- comment --> 로 시작하는 섹션 한 덩어리를 들어낸다."""
+    m = re.search(r"\n  <!-- " + re.escape(comment) + r" -->\n.*?\n  </section>\n", text, re.S)
+    assert m, f"섹션을 찾지 못했습니다: {comment}"
+    return text[:m.start()] + "\n" + text[m.end():]
 
 # 1) 일반용: VIP 섹션 삭제
-general = src[:m.start()] + "\n" + src[m.end():]
+general = cut(src, "2. VIP 귀빈 초청의 글 (VIP 전용)")
 (ROOT / "index.html").write_text(general, encoding="utf-8")
 
+# VIP용 공통: 일반용 초청장(p.3) 삭제 — VIP는 자체 초청의 글이 있다
+vip = cut(src, "3. 초청장 (일반용)")
+
 # 2) VIP용(/vip/ 하위): 상대 경로 → 절대 경로
-vip_abs = re.sub(r'(["\'(`])(kv/|sponsors/|gallery/|kw-logo\.png|cover\.png)', r'\1/\2', src)
+vip_abs = re.sub(r'(["\'(`])(kv/|sponsors/|gallery/|kw-logo\.png|cover\.png)', r'\1/\2', vip)
 os.makedirs(ROOT / "vip", exist_ok=True)
 (ROOT / "vip/index.html").write_text(vip_abs, encoding="utf-8")
 
 # 3) VIP 전용 레포(사이트 루트): 경로 손대지 않음 — 상대 경로가 그대로 맞는다
 if VIPREPO.is_dir():
-    (VIPREPO / "index.html").write_text(src, encoding="utf-8")
+    (VIPREPO / "index.html").write_text(vip, encoding="utf-8")
     # 에셋 동기화 (master.html 이 실제로 참조하는 것만)
     for rel in ["kv/poster.jpg", "kw-logo.png", "cover.png"]:
         dst = VIPREPO / rel
@@ -33,7 +38,7 @@ if VIPREPO.is_dir():
         shutil.copy2(ROOT / rel, dst)
     if (ROOT / "gallery").is_dir():
         shutil.copytree(ROOT / "gallery", VIPREPO / "gallery", dirs_exist_ok=True)
-    print("../광운대-vip/index.html", len(src), "bytes  (VIP 전용 레포)")
+    print("../광운대-vip/index.html", len(vip), "bytes  (VIP 전용 레포)")
 else:
     print("!! VIP 레포 디렉토리 없음:", VIPREPO)
 
