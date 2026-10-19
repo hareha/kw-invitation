@@ -20,8 +20,9 @@ def cut(text, comment):
 general = cut(src, "2. VIP 귀빈 초청의 글 (VIP 전용)")
 (ROOT / "index.html").write_text(general, encoding="utf-8")
 
-# VIP용 공통: 일반용 초청장(p.3) 삭제 — VIP는 자체 초청의 글이 있다
+# VIP용 공통: 일반용 초청장(p.3) + 현장 스케치 삭제
 vip = cut(src, "3. 초청장 (일반용)")
+vip = cut(vip, "현장 갤러리")
 
 # 2) VIP용(/vip/ 하위): 상대 경로 → 절대 경로
 vip_abs = re.sub(r'(["\'(`])(kv/|sponsors/|gallery/|kw-logo\.png|cover\.png)', r'\1/\2', vip)

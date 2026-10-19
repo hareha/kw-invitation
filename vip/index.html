@@ -187,12 +187,6 @@
     <p class="note">※ 세부 프로그램은 사정에 따라 변경될 수 있습니다.</p>
   </section>
 
-  <!-- 현장 갤러리 -->
-  <section class="frame reveal">
-    <h2><svg class="orn r"><use href="#orn"/></svg>현장 스케치<svg class="orn"><use href="#orn"/></svg></h2>
-    <p style="color:var(--sub);margin-bottom:24px">2026 로보페스트 월드 챔피언십 현장</p>
-    <div class="gallery" id="gallery"></div>
-  </section>
 
   <!-- 6. 오시는 길 -->
   <section class="frame reveal">
@@ -236,6 +230,7 @@
   (function(){
     const photos=['DSC04266','DSC04262','DSC04327','DSC04329','DSC04383','DSC04376','DSC04333','DSC04356','DSC04385'];
     const grid=document.getElementById('gallery'), lb=document.getElementById('lb'), img=document.getElementById('lbImg'), cnt=document.getElementById('lbCount');
+    if(!grid) return;   // VIP 빌드에는 갤러리 섹션이 없다
     let cur=0, sx=null;
     grid.innerHTML=photos.map((p,i)=>`<button type="button" data-i="${i}" aria-label="사진 ${i+1} 크게 보기"><img src="/gallery/thumb/${p}.jpg" alt="" loading="lazy"></button>`).join('');
     const show=i=>{ cur=(i+photos.length)%photos.length; img.src=`/gallery/${photos[cur]}.jpg`; cnt.textContent=`${cur+1} / ${photos.length}`; };

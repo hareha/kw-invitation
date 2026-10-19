@@ -233,6 +233,7 @@
   (function(){
     const photos=['DSC04266','DSC04262','DSC04327','DSC04329','DSC04383','DSC04376','DSC04333','DSC04356','DSC04385'];
     const grid=document.getElementById('gallery'), lb=document.getElementById('lb'), img=document.getElementById('lbImg'), cnt=document.getElementById('lbCount');
+    if(!grid) return;   // VIP 빌드에는 갤러리 섹션이 없다
     let cur=0, sx=null;
     grid.innerHTML=photos.map((p,i)=>`<button type="button" data-i="${i}" aria-label="사진 ${i+1} 크게 보기"><img src="gallery/thumb/${p}.jpg" alt="" loading="lazy"></button>`).join('');
     const show=i=>{ cur=(i+photos.length)%photos.length; img.src=`gallery/${photos[cur]}.jpg`; cnt.textContent=`${cur+1} / ${photos.length}`; };
